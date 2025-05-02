@@ -1,27 +1,48 @@
-
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const TrustedBySection = () => {
   const partners = [
-    { name: "Airbnb", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 120 },
-    { name: "Google", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 120 },
-    { name: "Slack", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 120 },
-    { name: "YouTube", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 140 },
-    { name: "CVS Pharmacy", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 160 },
-    { name: "Netflix", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 120 },
-    { name: "Amazon", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 130 },
-    { name: "Microsoft", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 150 },
-    { name: "Apple", logo: "/lovable-uploads/3ff4b181-cb87-4f68-8db6-3ea0c51d88e9.png", width: 120 },
+    { 
+      name: "Second Tree", 
+      logo: "/lovable-uploads/fe40ce14-8ace-4394-819d-7c99107ce700.png", 
+      width: 140 
+    },
+    { 
+      name: "UNHCR", 
+      logo: "/lovable-uploads/ce79e40e-8a3d-49fd-bdc0-96c965d6c09a.png", 
+      width: 180 
+    },
+    { 
+      name: "IsraAID", 
+      logo: "/lovable-uploads/1c7679f1-48e2-48c7-bece-661f9b6422ae.png", 
+      width: 160 
+    },
+    // Keep a few placeholders to have enough items for the carousel effect
+    { 
+      name: "Second Tree", 
+      logo: "/lovable-uploads/fe40ce14-8ace-4394-819d-7c99107ce700.png", 
+      width: 140 
+    },
+    { 
+      name: "UNHCR", 
+      logo: "/lovable-uploads/ce79e40e-8a3d-49fd-bdc0-96c965d6c09a.png", 
+      width: 180 
+    },
+    { 
+      name: "IsraAID", 
+      logo: "/lovable-uploads/1c7679f1-48e2-48c7-bece-661f9b6422ae.png", 
+      width: 160 
+    },
   ];
 
   return (
-    <section className="py-8 bg-white border-y border-gray-100">
+    <section className="py-10 bg-white border-y border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <p className="text-sm uppercase tracking-wider text-gray-500 font-medium">
-            TRUSTED BY LEADING COMPANIES
+            TRUSTED BY LEADING ORGANIZATIONS
           </p>
         </div>
         
@@ -37,12 +58,13 @@ const TrustedBySection = () => {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {partners.map((partner, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 xs:basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6 xl:basis-1/7">
-                    <div className="p-2 flex items-center justify-center h-16 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 sm:basis-1/3 md:basis-1/4 lg:basis-1/4">
+                    <div className="p-4 flex items-center justify-center h-24 opacity-80 hover:opacity-100 transition-all duration-300">
                       <img 
                         src={partner.logo} 
                         alt={`${partner.name} logo`} 
-                        className="h-8 w-auto object-contain"
+                        className="h-16 w-auto object-contain" 
+                        style={{ maxWidth: partner.width }}
                       />
                     </div>
                   </CarouselItem>
