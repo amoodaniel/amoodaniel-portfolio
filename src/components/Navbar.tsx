@@ -18,10 +18,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { title: 'Recent Work', href: '#projects' },
     { title: 'Services', href: '#services' },
-    { title: 'Projects', href: '#projects' },
-    { title: 'Content', href: '#content' },
     { title: 'About', href: '#about' },
+    { title: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -32,10 +32,12 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex-shrink-0 font-bold text-xl md:text-2xl text-humanitarian-dark">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          <div className="flex-shrink-0 font-bold text-2xl md:text-3xl text-gray-900">
             <a href="#" className="flex items-center gap-2">
-              <span className="text-humanitarian-primary">Tech</span>Impact
+              <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                TI
+              </div>
             </a>
           </div>
           
@@ -45,21 +47,18 @@ const Navbar = () => {
               <a
                 key={link.title}
                 href={link.href}
-                className="text-gray-700 hover:text-humanitarian-primary font-medium transition-colors"
+                className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
               >
                 {link.title}
               </a>
             ))}
-            <Button className="bg-humanitarian-primary hover:bg-humanitarian-secondary">
-              <a href="#contact">Get in Touch</a>
-            </Button>
           </nav>
           
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-humanitarian-primary focus:outline-none"
+              className="text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -76,17 +75,11 @@ const Navbar = () => {
                 key={link.title}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-gray-700 hover:text-humanitarian-primary font-medium py-2"
+                className="block text-gray-700 hover:text-gray-900 font-medium py-2"
               >
                 {link.title}
               </a>
             ))}
-            <Button 
-              className="w-full bg-humanitarian-primary hover:bg-humanitarian-secondary mt-3"
-              onClick={() => setIsOpen(false)}
-            >
-              <a href="#contact">Get in Touch</a>
-            </Button>
           </div>
         </div>
       )}

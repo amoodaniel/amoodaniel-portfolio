@@ -1,40 +1,39 @@
 
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-gradient-to-br from-humanitarian-muted via-white to-humanitarian-muted opacity-80 z-0" 
-        aria-hidden="true"
-      />
+    <section id="hero" className="relative py-24 lg:py-32 min-h-[90vh] flex items-center">
+      <div className="absolute inset-0 bg-gray-50 z-0" aria-hidden="true" />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-humanitarian-dark animate-fade-in">
-            Technology Solutions for <span className="text-humanitarian-primary">Humanitarian Impact</span>
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+            We help humanitarian <br className="hidden md:block" />
+            organizations build impact <br className="hidden md:block" /> 
+            with <span className="relative inline-flex items-center">
+              technology
+              <span className="flex absolute -right-14 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-6 md:mr-4 md:top-0">
+                <span className="w-12 h-12 rounded-full bg-red-400 opacity-90"></span>
+                <span className="w-12 h-12 rounded-full bg-purple-400 opacity-90 -ml-6"></span>
+                <span className="w-12 h-12 rounded-full bg-green-400 opacity-90 -ml-6"></span>
+              </span>
+            </span> solutions.
           </h1>
           
-          <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto animate-slide-up">
-            Building innovative tech products that help humanitarian organizations create positive change worldwide. Let's transform your mission through technology.
+          <p className="mt-8 text-xl text-gray-600 max-w-3xl">
+            Let's transform your organization's humanitarian mission through innovative tech.
           </p>
           
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <Button className="bg-humanitarian-primary hover:bg-humanitarian-secondary text-white py-6 px-8 rounded-md text-lg">
-              <a href="#contact">Work With Me</a>
-            </Button>
-            <Button variant="outline" className="border-humanitarian-primary text-humanitarian-primary hover:bg-humanitarian-muted py-6 px-8 rounded-md text-lg">
-              <a href="#projects">View Projects</a>
+          <div className="mt-12">
+            <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full py-6 px-8 text-lg flex items-center gap-2 shadow-md">
+              <span>Book an intro call</span>
+              <ArrowRight size={20} />
             </Button>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#services" className="text-humanitarian-primary hover:text-humanitarian-secondary transition-colors">
-          <ChevronDown size={36} />
-        </a>
       </div>
     </section>
   );
