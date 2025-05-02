@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gray-50 z-0" aria-hidden="true" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
             We help humanitarian <br className="hidden md:block" />
             organizations build impact <br className="hidden md:block" /> 
@@ -23,11 +23,11 @@ const HeroSection = () => {
             </span> solutions.
           </h1>
           
-          <p className="mt-8 text-xl text-gray-600 max-w-3xl">
+          <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">
             Let's transform your organization's humanitarian mission through innovative tech.
           </p>
           
-          <div className="mt-12">
+          <div className="mt-12 flex justify-center">
             <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full py-6 px-8 text-lg flex items-center gap-2 shadow-md">
               <span>Book an intro call</span>
               <ArrowRight size={20} />
