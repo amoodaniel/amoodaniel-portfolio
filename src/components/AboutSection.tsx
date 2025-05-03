@@ -1,69 +1,76 @@
 
 import React from 'react';
-import { Award, Briefcase, Star } from 'lucide-react';
+import { Award, Briefcase, Globe } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 lg:py-24 bg-humanitarian-muted">
+    <section id="about" className="py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-humanitarian-dark mb-8">
-              About <span className="text-humanitarian-primary">Me</span>
+            <p className="text-sm uppercase tracking-wider text-gray-500 font-medium mb-3">
+              ABOUT OUR MISSION
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+              Technology that <span className="relative">
+                empowers
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-red-400"></span>
+              </span> humanitarian action
             </h2>
             
-            <p className="text-lg text-gray-700 mb-6">
-              I'm a technology consultant with over 10 years of experience building innovative solutions specifically designed for humanitarian organizations around the world.
+            <p className="text-xl text-gray-600 mb-6">
+              We're a team of technologists passionate about creating digital solutions that address the unique challenges faced by humanitarian organizations around the world.
             </p>
             
-            <p className="text-lg text-gray-700 mb-6">
-              My journey began as a software developer at a major international NGO, where I witnessed firsthand the challenges of implementing technology in resource-constrained environments. Today, I work with organizations of all sizes to create tech solutions that make a meaningful impact.
+            <p className="text-gray-600 mb-6">
+              Our experience spans conflict zones, refugee settlements, natural disasters, and development contexts across five continents. We understand the technical, operational, and ethical complexities of deploying technology in humanitarian settings.
             </p>
             
-            <p className="text-lg text-gray-700">
-              I'm passionate about open-source technologies, user-centered design, and building sustainable solutions that can be maintained and scaled by local teams. When I'm not working with clients, I create educational content to share knowledge and inspire others in the humanitarian tech community.
+            <p className="text-gray-600">
+              We're committed to building solutions that are sustainable, accessible, and designed with the needs of both humanitarian workers and affected communities at the center.
             </p>
             
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex items-center">
-                <Briefcase className="w-8 h-8 text-humanitarian-primary mr-3" />
+                <Globe className="w-8 h-8 text-gray-900 mr-3" />
                 <div>
-                  <p className="font-bold text-2xl text-humanitarian-dark">10+</p>
+                  <p className="font-bold text-2xl text-gray-900">43+</p>
+                  <p className="text-gray-600">Countries</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Briefcase className="w-8 h-8 text-gray-900 mr-3" />
+                <div>
+                  <p className="font-bold text-2xl text-gray-900">87+</p>
+                  <p className="text-gray-600">Projects</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Award className="w-8 h-8 text-gray-900 mr-3" />
+                <div>
+                  <p className="font-bold text-2xl text-gray-900">12+</p>
                   <p className="text-gray-600">Years Experience</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <Star className="w-8 h-8 text-humanitarian-primary mr-3" />
-                <div>
-                  <p className="font-bold text-2xl text-humanitarian-dark">30+</p>
-                  <p className="text-gray-600">Projects Delivered</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <Award className="w-8 h-8 text-humanitarian-primary mr-3" />
-                <div>
-                  <p className="font-bold text-2xl text-humanitarian-dark">15+</p>
-                  <p className="text-gray-600">Countries Served</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=900" 
-                alt="Tech Consultant" 
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=900" 
+                alt="Humanitarian Tech Team" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-humanitarian-primary font-bold">
-                "Technology should serve humanity, not the other way around."
+            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+              <p className="text-gray-900 font-bold">
+                "Technology should amplify human capacity, not replace it."
               </p>
             </div>
+            <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-red-400 opacity-80"></div>
           </div>
         </div>
       </div>
