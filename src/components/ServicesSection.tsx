@@ -1,23 +1,28 @@
 
 import React from 'react';
-import { LayoutGrid, Rocket, Brush } from 'lucide-react';
+import { Bulb, Code, Bot, Database } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <LayoutGrid className="w-10 h-10 text-gray-900" />,
-      title: "User Experience Design",
-      description: "Creating intuitive digital experiences that center human needs and drive meaningful engagement in humanitarian contexts."
+      icon: <Bulb className="w-10 h-10 text-gray-900" />,
+      title: "Digital Strategy & Innovation Consulting",
+      description: "Guiding organizations through digital transformation with tailored strategies that align technology solutions with humanitarian mission objectives."
     },
     {
-      icon: <Rocket className="w-10 h-10 text-gray-900" />,
-      title: "Technical Strategy",
-      description: "Developing comprehensive technology roadmaps that align with humanitarian goals and maximize impact with limited resources."
+      icon: <Code className="w-10 h-10 text-gray-900" />,
+      title: "Web Design & Development",
+      description: "Creating intuitive, accessible, and responsive web platforms that enhance user engagement and effectively communicate your organization's impact."
     },
     {
-      icon: <Brush className="w-10 h-10 text-gray-900" />,
-      title: "Solution Architecture",
-      description: "Building resilient technology frameworks that function reliably in challenging environments with limited connectivity."
+      icon: <Bot className="w-10 h-10 text-gray-900" />,
+      title: "Chatbot & Automation Solutions",
+      description: "Developing intelligent conversation systems and workflow automation tools that improve service delivery and operational efficiency."
+    },
+    {
+      icon: <Database className="w-10 h-10 text-gray-900" />,
+      title: "Data & Impact Reporting",
+      description: "Building comprehensive data collection frameworks and visualization tools that demonstrate program effectiveness and inform decision-making."
     }
   ];
 
@@ -37,13 +42,13 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-start">
-              <div className="bg-white p-4 rounded-full shadow-sm mb-6">
+            <div key={index} className="flex flex-col items-start p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-gray-50 p-4 rounded-full mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
