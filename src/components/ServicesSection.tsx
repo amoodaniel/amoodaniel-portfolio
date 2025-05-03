@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Bulb, Code, Bot, Database } from 'lucide-react';
+import { LightbulbIcon, Code, Bot, Database } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Bulb className="w-10 h-10 text-gray-900" />,
+      icon: <LightbulbIcon className="w-10 h-10 text-gray-900" />,
       title: "Digital Strategy & Innovation Consulting",
       description: "Guiding organizations through digital transformation with tailored strategies that align technology solutions with humanitarian mission objectives."
     },
