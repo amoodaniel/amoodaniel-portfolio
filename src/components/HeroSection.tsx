@@ -11,16 +11,16 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-            We help humanitarian <br className="hidden md:block" />
-            organizations build impact <br className="hidden md:block" /> 
-            with <span className="relative inline-flex items-center">
-              technology
+            I help organizations <br className="hidden md:block" />
+            amplify their impact <br className="hidden md:block" /> 
+            through <span className="relative inline-flex items-center">
+              smart
               <span className="flex absolute -right-14 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-6 md:mr-4 md:top-0">
                 <span className="w-12 h-12 rounded-full bg-red-400 opacity-90"></span>
                 <span className="w-12 h-12 rounded-full bg-purple-400 opacity-90 -ml-6"></span>
                 <span className="w-12 h-12 rounded-full bg-green-400 opacity-90 -ml-6"></span>
               </span>
-            </span> solutions.
+            </span>, user-focused technology.
           </h1>
           
           <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">
