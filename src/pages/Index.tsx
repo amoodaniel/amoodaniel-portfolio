@@ -4,8 +4,9 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import TrustedBySection from '@/components/TrustedBySection';
-import ProjectsSection from '@/components/ProjectsSection';
 import ContentSection from '@/components/ContentSection';
+import HumanitarianTechSection from '@/components/HumanitarianTechSection';
+import PersonalProjectsSection from '@/components/PersonalProjectsSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -17,7 +18,8 @@ const Index = () => {
       <HeroSection />
       <TrustedBySection />
       <ServicesSection />
-      <ProjectsSection />
+      <HumanitarianTechSection />
+      <PersonalProjectsSection />
       <ContentSection />
       <AboutSection />
       <ContactSection />
