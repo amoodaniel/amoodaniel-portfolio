@@ -1,18 +1,19 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const HeroSection = () => {
-  return (
-    <section id="hero" className="relative py-24 lg:py-32 min-h-[90vh] flex items-center overflow-hidden">
+  return <section id="hero" className="relative py-24 lg:py-32 min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gray-50 z-0" aria-hidden="true" />
       
       {/* Background circles */}
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-300 opacity-20 blur-xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-green-300 opacity-20 blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-3/4 left-1/2 w-80 h-80 rounded-full bg-red-300 opacity-20 blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-green-300 opacity-20 blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }} />
+        <div className="absolute top-3/4 left-1/2 w-80 h-80 rounded-full bg-red-300 opacity-20 blur-xl animate-pulse" style={{
+        animationDelay: '2s'
+      }} />
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,9 +24,9 @@ const HeroSection = () => {
             through <span className="relative inline-flex items-center">
               smart
               <span className="flex absolute -right-14 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-6 md:mr-4 md:top-0">
-                <span className="w-12 h-12 rounded-full bg-red-400 opacity-90"></span>
-                <span className="w-12 h-12 rounded-full bg-purple-400 opacity-90 -ml-6"></span>
-                <span className="w-12 h-12 rounded-full bg-green-400 opacity-90 -ml-6"></span>
+                
+                
+                
               </span>
             </span>, user-focused technology.
           </h1>
@@ -42,8 +43,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
