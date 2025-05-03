@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { LightbulbIcon, Code, Bot, Database } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const ServicesSection = () => {
   const services = [
@@ -27,9 +28,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-gray-50">
+    <section id="services" className="py-24 lg:py-32 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center mb-16 lg:mb-24">
+        <div className="max-w-6xl mx-auto text-center mb-16 lg:mb-24 animate-fade-in">
           <p className="text-sm uppercase tracking-wider text-gray-500 font-medium mb-3">
             OUR EXPERTISE
           </p>
@@ -44,8 +45,24 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-start p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-gray-50 p-4 rounded-full mb-6">
+            <div 
+              key={index} 
+              className={cn(
+                "flex flex-col items-start p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1",
+                "opacity-0 animate-fade-in",
+                {
+                  "animation-delay-100": index === 0,
+                  "animation-delay-300": index === 1,
+                  "animation-delay-500": index === 2,
+                  "animation-delay-700": index === 3,
+                }
+              )}
+              style={{
+                animationFillMode: 'forwards',
+                animationDelay: `${index * 200}ms`
+              }}
+            >
+              <div className="bg-gray-50 p-4 rounded-full mb-6 transform transition-transform duration-300 hover:scale-110">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
