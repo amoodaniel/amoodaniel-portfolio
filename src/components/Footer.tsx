@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Linkedin, Twitter, Youtube, Mail } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           <div>
             <h3 className="font-bold text-xl mb-4 flex items-center">
-              <span className="text-humanitarian-primary">Tech</span>Impact
+              <span className="text-humanitarian-primary">Amoo</span> Daniel
             </h3>
             <p className="text-gray-300 mb-6">
               Building technology solutions for humanitarian impact. Let's create positive change together.
@@ -63,7 +62,7 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} TechImpact Consulting. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Amoo Daniel. All rights reserved.</p>
         </div>
       </div>
     </footer>
