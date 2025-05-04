@@ -33,60 +33,28 @@ const PersonalProjectsSection = () => {
       link: "https://github.com/amoodaniel/AI-PDF-summarizer"
     },
     {
-      title: "Python-crash-course",
-      description: "Practical code samples and exercises based on the \"Python Crash Course\" book for hands-on learning.",
-      image: "placeholder.svg",
-      tags: ["Python"],
-      category: "learning",
-      link: "https://github.com/amoodaniel/Python-crash-course"
-    },
-    {
-      title: "Data-Analysis-with-Pandas",
-      description: "Demonstrates various data wrangling and analysis techniques using the Pandas library.",
-      image: "placeholder.svg",
-      tags: ["Python", "Pandas", "Jupyter Notebook"],
-      category: "data",
-      link: "https://github.com/amoodaniel/Data-Analysis-with-Pandas"
-    },
-    {
-      title: "Machine-Learning-Projects",
-      description: "Contains different machine learning experiments with model training, evaluation, and comparison.",
-      image: "placeholder.svg",
-      tags: ["Python", "Scikit-learn"],
-      category: "ai",
-      link: "https://github.com/amoodaniel/Machine-Learning-Projects"
-    },
-    {
-      title: "Web-Scraping-Examples",
-      description: "A variety of scripts for scraping and extracting structured data from web pages.",
-      image: "placeholder.svg",
-      tags: ["Python", "BeautifulSoup", "Requests"],
-      category: "web",
-      link: "https://github.com/amoodaniel/Web-Scraping-Examples"
-    },
-    {
-      title: "Django-Blog-Application",
-      description: "A fully functional blog site with user authentication, post creation/editing, and dynamic views.",
-      image: "placeholder.svg",
-      tags: ["Python", "Django"],
-      category: "web",
-      link: "https://github.com/amoodaniel/Django-Blog-Application"
-    },
-    {
-      title: "JavaScript-Game-Projects",
-      description: "Fun browser games built to practice and showcase JavaScript fundamentals and DOM manipulation.",
-      image: "placeholder.svg",
-      tags: ["JavaScript", "HTML", "CSS"],
-      category: "web",
-      link: "https://github.com/amoodaniel/JavaScript-Game-Projects"
-    },
-    {
       title: "Portfolio-Website",
       description: "A personal site built to highlight professional experience, projects, and contact details.",
       image: "placeholder.svg",
       tags: ["HTML", "CSS", "JavaScript"],
       category: "web",
       link: "https://github.com/amoodaniel/Portfolio-Website"
+    },
+    {
+      title: "Invoice Nomad",
+      description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
+      image: "placeholder.svg",
+      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      category: "web",
+      link: "https://github.com/amoodaniel/pro-invoice-plus-creator"
+    },
+    {
+      title: "Recommendation-system-using-twitter-data",
+      description: "This project focuses on developing an intelligent recommender system by integrating collaborative filtering with social network analysis (SNA) using Twitter data.",
+      image: "placeholder.svg",
+      tags: ["Python", "NetworkX", "Pandas", "Scikit-learn", "Twitter API"],
+      category: "ai",
+      link: "https://github.com/amoodaniel/Recommendation-system-using-twitter-data"
     }
   ];
 
