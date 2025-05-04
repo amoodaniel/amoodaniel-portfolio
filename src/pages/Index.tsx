@@ -7,7 +7,6 @@ import TrustedBySection from '@/components/TrustedBySection';
 import ContentSection from '@/components/ContentSection';
 import HumanitarianTechSection from '@/components/HumanitarianTechSection';
 import PersonalProjectsSection from '@/components/PersonalProjectsSection';
-import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -21,7 +20,6 @@ const Index = () => {
       <HumanitarianTechSection />
       <PersonalProjectsSection />
       <ContentSection />
-      <AboutSection />
       <ContactSection />
       <Footer />
     </div>

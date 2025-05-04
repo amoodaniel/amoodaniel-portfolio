@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { ArrowRight, Video, FileText, Headphones, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Video, FileText, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const ContentSection = () => {
   const contentItems = [
@@ -12,7 +12,7 @@ const ContentSection = () => {
       description: "Weekly videos exploring how technology can be used to address humanitarian challenges.",
       icon: <Video className="w-5 h-5" />,
       buttonText: "Watch Videos",
-      link: "#"
+      link: "https://www.youtube.com/@amoodaniel"
     },
     {
       title: "Tech Blog",
@@ -20,15 +20,7 @@ const ContentSection = () => {
       description: "In-depth articles about technology implementation in humanitarian contexts.",
       icon: <FileText className="w-5 h-5" />,
       buttonText: "Read Articles",
-      link: "#"
-    },
-    {
-      title: "Podcast",
-      type: "Conversations with Changemakers",
-      description: "Interviews with leaders in humanitarian tech and social entrepreneurship.",
-      icon: <Headphones className="w-5 h-5" />,
-      buttonText: "Listen Now",
-      link: "#"
+      link: "https://amoodaniel.medium.com/list/amoos-tech-articles-0bccbf7a8830"
     }
   ];
 
@@ -50,7 +42,7 @@ const ContentSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {contentItems.map((item, index) => (
             <Card key={index} className="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden">
               <div className="h-48 bg-gray-100 flex items-center justify-center">
@@ -65,7 +57,11 @@ const ContentSection = () => {
                 <p className="text-gray-600">{item.description}</p>
               </CardContent>
               <CardFooter className="px-6 py-4">
-                <Button variant="ghost" className="text-gray-800 hover:text-black flex items-center gap-2 p-0 h-auto">
+                <Button 
+                  variant="ghost" 
+                  className="text-gray-800 hover:text-black flex items-center gap-2 p-0 h-auto"
+                  onClick={() => window.open(item.link, '_blank')}
+                >
                   {item.buttonText}
                   <ExternalLink className="w-4 h-4" />
                 </Button>

@@ -6,18 +6,13 @@ import { Button } from '@/components/ui/button';
 const HumanitarianTechSection = () => {
   const projects = [
     {
-      title: "Disaster Response Platform",
-      description: "Built a real-time coordination platform for disaster response teams, deployed in 5 countries.",
+      title: "Anenasawa - A GBV Response Bot",
+      description: "Anenesawa is a WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
       link: "#"
     },
     {
-      title: "Resource Distribution System",
-      description: "Developed a system to optimize the distribution of resources in refugee camps, improving efficiency by 40%.",
-      link: "#"
-    },
-    {
-      title: "Health Monitoring App",
-      description: "Created a mobile app for health workers to monitor and report health conditions in remote areas.",
+      title: "Maji Monitor",
+      description: "An SMS-based reporting bot that streamlines the collection and real-time tracking of water access issues in underserved communities.",
       link: "#"
     }
   ];

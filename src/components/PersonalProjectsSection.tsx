@@ -9,28 +9,28 @@ const PersonalProjectsSection = () => {
   
   const projects = [
     {
-      title: "AI for Good",
-      description: "An open-source platform that uses AI to analyze satellite imagery for disaster response.",
+      title: "WASH Wiki",
+      description: "A knowledge management platform for the WASH sector, built with Next.js and MySQL.",
       image: "placeholder.svg",
-      tags: ["AI", "Python", "Open Source"],
+      tags: ["Next.js", "MySQL", "TailwindCSS"],
       category: "web",
-      link: "#"
+      link: "https://github.com/amoodaniel/wash-wiki"
     },
     {
-      title: "Community Connect",
-      description: "A mobile app that connects volunteers with local community projects.",
+      title: "Data4WASH",
+      description: "A web application for visualizing and analyzing WASH data in humanitarian contexts.",
       image: "placeholder.svg",
-      tags: ["React Native", "Firebase"],
+      tags: ["React", "D3.js", "Express"],
+      category: "web",
+      link: "https://github.com/amoodaniel/data4wash"
+    },
+    {
+      title: "Community Health App",
+      description: "A mobile application for community health workers to track and report health data in remote areas.",
+      image: "placeholder.svg",
+      tags: ["React Native", "Firebase", "Health"],
       category: "mobile",
-      link: "#"
-    },
-    {
-      title: "Resource Tracker",
-      description: "A web application for tracking and managing resources in disaster zones.",
-      image: "placeholder.svg",
-      tags: ["Next.js", "MongoDB"],
-      category: "web",
-      link: "#"
+      link: "https://github.com/amoodaniel/community-health-app"
     }
   ];
 
@@ -104,7 +104,11 @@ const PersonalProjectsSection = () => {
                   ))}
                 </div>
                 
-                <Button variant="outline" className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md">
+                <Button 
+                  variant="outline" 
+                  className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
+                  onClick={() => window.open(project.link, '_blank')}
+                >
                   View Project
                   <ExternalLink className="w-4 h-4" />
                 </Button>
