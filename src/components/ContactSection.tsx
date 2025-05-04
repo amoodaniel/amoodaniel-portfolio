@@ -4,6 +4,14 @@ import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ContactSection = () => {
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:danielamoo35@gmail.com';
+  };
+  
+  const handleScheduleClick = () => {
+    window.open('https://cal.com/danielamoo/30min', '_blank');
+  };
+
   return (
     <section id="contact" className="py-24 lg:py-32 bg-white border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,6 +32,7 @@ const ContactSection = () => {
             <Button
               variant="default" 
               className="bg-black hover:bg-gray-800 text-white rounded-md py-6 flex items-center justify-center gap-2"
+              onClick={handleEmailClick}
             >
               <Mail className="h-5 w-5" />
               <span>Email Me</span>
@@ -32,6 +41,7 @@ const ContactSection = () => {
             <Button
               variant="outline"
               className="border-gray-300 text-gray-800 hover:bg-gray-100 rounded-md py-6"
+              onClick={handleScheduleClick}
             >
               Schedule a Consultation
             </Button>
