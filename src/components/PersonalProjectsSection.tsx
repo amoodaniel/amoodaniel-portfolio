@@ -38,7 +38,7 @@ const PersonalProjectsSection = () => {
       image: "placeholder.svg",
       tags: ["HTML", "CSS", "JavaScript"],
       category: "web",
-      link: "https://github.com/amoodaniel/Portfolio-Website"
+      link: "https://github.com/amoodaniel/Portfolio-option-1"
     },
     {
       title: "Invoice Nomad",
