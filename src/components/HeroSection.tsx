@@ -48,7 +48,7 @@ const HeroSection = () => {
           
           <div className="mt-12 flex justify-center">
             <Button 
-              className="bg-gray-900 hover:bg-gray-800 text-white rounded-full py-6 px-8 text-lg flex items-center gap-2 shadow-md"
+              className="bg-black hover:bg-gray-800 text-white rounded-md py-6 px-8 text-lg flex items-center gap-2 shadow-md"
               onClick={handleBookCall}
             >
               <span>Book an intro call</span>
