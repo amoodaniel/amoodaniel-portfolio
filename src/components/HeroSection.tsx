@@ -36,12 +36,10 @@ const HeroSection = () => {
             amplify their impact <br className="hidden md:block" /> 
             through <span className="relative inline-flex items-center">
               smart
-              <span className="flex absolute -right-14 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-6 md:mr-4 md:top-0">
-                
-                
-                
+              <span className="flex absolute -right-2 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-1 md:mr-1 md:top-0">
+                ,
               </span>
-            </span>, user-focused technology.
+            </span> user-focused technology.
           </h1>
           
           <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">
