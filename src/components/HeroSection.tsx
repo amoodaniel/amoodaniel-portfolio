@@ -4,6 +4,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const handleBookCall = () => {
+    window.open('https://cal.com/danielamoo/30min', '_blank');
+  };
+
   return (
     <section id="hero" className="relative py-24 lg:py-32 min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gray-50 z-0" aria-hidden="true" />
@@ -45,7 +49,10 @@ const HeroSection = () => {
           </p>
           
           <div className="mt-12 flex justify-center">
-            <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full py-6 px-8 text-lg flex items-center gap-2 shadow-md">
+            <Button 
+              className="bg-gray-900 hover:bg-gray-800 text-white rounded-full py-6 px-8 text-lg flex items-center gap-2 shadow-md"
+              onClick={handleBookCall}
+            >
               <span>Book an intro call</span>
               <ArrowRight size={20} />
             </Button>

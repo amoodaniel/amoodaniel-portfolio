@@ -17,6 +17,10 @@ const HumanitarianTechSection = () => {
     }
   ];
 
+  const handleContactClick = () => {
+    window.location.href = 'mailto:danielamoo35@gmail.com';
+  };
+
   return (
     <section id="humanitarian-tech" className="py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
