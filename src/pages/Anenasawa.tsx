@@ -7,6 +7,7 @@ import ProjectApproach from '@/components/ProjectApproach';
 import ProjectDeliverables from '@/components/ProjectDeliverables';
 import ProjectImpact from '@/components/ProjectImpact';
 import ProjectNews from '@/components/ProjectNews';
+import ProjectProblemSolution from '@/components/ProjectProblemSolution';
 
 const Anenasawa = () => {
   const projectData = {
@@ -66,6 +67,12 @@ const Anenasawa = () => {
         targetAudience={projectData.targetAudience}
         citation={projectData.citation}
         imageUrl={projectData.imageUrl}
+      />
+      <ProjectProblemSolution 
+        problemStatement={projectData.problemStatement}
+        solutionStatement={projectData.solutionStatement}
+        targetAudience={projectData.targetAudience}
+        citation={projectData.citation}
       />
       <ProjectApproach approach={projectData.approach} />
       <ProjectDeliverables deliverables={projectData.deliverables} />

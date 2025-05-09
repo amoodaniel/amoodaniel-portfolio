@@ -17,16 +17,13 @@ interface ProjectHeroSectionProps {
 const ProjectHeroSection = ({ 
   title, 
   description, 
-  problemStatement, 
-  solutionStatement, 
-  targetAudience, 
-  citation,
-  imageUrl 
+  imageUrl,
+  ...otherProps // We'll keep these props but use them in other sections 
 }: ProjectHeroSectionProps) => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-6">
+        <div className="mb-10">
           <Button 
             variant="ghost" 
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
@@ -39,37 +36,16 @@ const ProjectHeroSection = ({
           </Button>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left content column - takes up 7/12 of the grid on large screens */}
-          <div className="lg:col-span-7 space-y-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{title}</h1>
-            <p className="text-xl text-gray-700 mb-8 text-justify">{description}</p>
-            
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">Problem Statement</h2>
-              <p className="text-gray-700 text-justify">{problemStatement}</p>
-            </div>
-            
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">Solution Statement</h2>
-              <div className="text-gray-700 whitespace-pre-line text-justify">{solutionStatement}</div>
-            </div>
-            
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">Target Audience</h2>
-              <p className="text-gray-700 text-justify">{targetAudience}</p>
-            </div>
-            
-            {citation && (
-              <div className="text-sm text-gray-500 italic">
-                {citation}
-              </div>
-            )}
+          <div className="lg:col-span-7">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">{title}</h1>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed text-justify">{description}</p>
           </div>
           
           {/* Right image column - takes up 5/12 of the grid on large screens */}
-          <div className="lg:col-span-5 sticky top-24">
-            <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
+          <div className="lg:col-span-5">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-white transform hover:scale-[1.02] transition-transform duration-300">
               <img 
                 src={imageUrl} 
                 alt={title} 
