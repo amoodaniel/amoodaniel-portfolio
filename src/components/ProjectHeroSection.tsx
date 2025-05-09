@@ -24,7 +24,7 @@ const ProjectHeroSection = ({
   imageUrl 
 }: ProjectHeroSectionProps) => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
           <Button 
@@ -39,8 +39,9 @@ const ProjectHeroSection = ({
           </Button>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left content column - takes up 7/12 of the grid on large screens */}
+          <div className="lg:col-span-7 space-y-8">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{title}</h1>
             <p className="text-xl text-gray-700 mb-8 text-justify">{description}</p>
             
@@ -66,12 +67,15 @@ const ProjectHeroSection = ({
             )}
           </div>
           
-          <div className="rounded-lg overflow-hidden shadow-xl h-[500px]">
-            <img 
-              src={imageUrl} 
-              alt={title} 
-              className="w-full h-full object-cover" 
-            />
+          {/* Right image column - takes up 5/12 of the grid on large screens */}
+          <div className="lg:col-span-5 sticky top-24">
+            <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
+              <img 
+                src={imageUrl} 
+                alt={title} 
+                className="w-full h-full object-cover" 
+              />
+            </div>
           </div>
         </div>
       </div>
