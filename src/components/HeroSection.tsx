@@ -27,7 +27,6 @@ const HeroSection = () => {
           <div className="inline-block mb-6">
             <span
               className="inline-block border border-gray-300 bg-white text-gray-800 rounded-full px-6 py-2 text-base font-medium shadow-sm cursor-pointer hover:bg-gray-100 transition"
-              onClick={handleBookCall}
               style={{ userSelect: 'none' }}
             >
               Tech Consultant

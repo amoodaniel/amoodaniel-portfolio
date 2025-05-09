@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,16 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              link.href.startsWith('/') ? (
+              link.href.startsWith('/#') ? (
+                <HashLink
+                  key={link.title}
+                  to={link.href}
+                  smooth
+                  className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+                >
+                  {link.title}
+                </HashLink>
+              ) : link.href.startsWith('/') ? (
                 <Link
                   key={link.title}
                   to={link.href}
@@ -82,7 +92,17 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-              link.href.startsWith('/') ? (
+              link.href.startsWith('/#') ? (
+                <HashLink
+                  key={link.title}
+                  to={link.href}
+                  smooth
+                  onClick={() => setIsOpen(false)}
+                  className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+                >
+                  {link.title}
+                </HashLink>
+              ) : link.href.startsWith('/') ? (
                 <Link
                   key={link.title}
                   to={link.href}
