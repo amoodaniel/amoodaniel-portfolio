@@ -26,7 +26,7 @@ const PersonalProjectsSection = () => {
     {
       title: "AI-PDF-summarizer",
       description: "An AI tool for extracting and summarizing content from PDF documents, making large texts easier to digest.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/AI-summ.png",
       tags: ["Python"],
       category: "ai",
       link: "https://github.com/amoodaniel/AI-PDF-summarizer"
@@ -34,7 +34,7 @@ const PersonalProjectsSection = () => {
     {
       title: "Portfolio-Website",
       description: "A personal site built to highlight professional experience, projects, and contact details.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/portfolio.png",
       tags: ["HTML", "CSS", "JavaScript"],
       category: "web",
       link: "https://github.com/amoodaniel/Portfolio-option-1"
@@ -42,7 +42,7 @@ const PersonalProjectsSection = () => {
     {
       title: "Invoice Nomad",
       description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/invoicenomad.png",
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       category: "web",
       link: "https://github.com/amoodaniel/pro-invoice-plus-creator"
@@ -50,7 +50,7 @@ const PersonalProjectsSection = () => {
     {
       title: "Recommendation-system-using-twitter-data",
       description: "This project focuses on developing an intelligent recommender system by integrating collaborative filtering with social network analysis (SNA) using Twitter data.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/recommend.webp",
       tags: ["Python", "NetworkX", "Pandas", "Scikit-learn", "Twitter API"],
       category: "ai",
       link: "https://github.com/amoodaniel/Recommendation-system-using-twitter-data"
