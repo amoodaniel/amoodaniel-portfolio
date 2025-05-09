@@ -2,13 +2,14 @@
 import React from 'react';
 import { Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HumanitarianTechSection = () => {
   const projects = [
     {
       title: "Anenasawa - A GBV Response Bot",
       description: "Anenesawa is a WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
-      link: "#"
+      link: "/anenasawa"
     },
     {
       title: "Maji Monitor",
@@ -52,7 +53,28 @@ const HumanitarianTechSection = () => {
             {projects.map((project, index) => (
               <div key={index}>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-0">{project.description}</p>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                {project.link === "/anenasawa" ? (
+                  <Button 
+                    variant="outline" 
+                    className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
+                    asChild
+                  >
+                    <Link to={project.link}>
+                      View Project
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button 
+                    variant="outline" 
+                    className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                )}
               </div>
             ))}
             
