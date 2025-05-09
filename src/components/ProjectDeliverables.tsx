@@ -19,7 +19,7 @@ const ProjectDeliverables = ({ deliverables }: ProjectDeliverablesProps) => {
                 <span className="mr-3 mt-1 bg-green-100 rounded-full p-1">
                   <Check size={16} className="text-green-600" />
                 </span>
-                <span className="text-gray-700">{item}</span>
+                <span className="text-gray-700 text-justify">{item}</span>
               </li>
             ))}
           </ul>

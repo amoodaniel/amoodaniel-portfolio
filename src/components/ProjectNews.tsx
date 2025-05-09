@@ -26,7 +26,7 @@ const ProjectNews = ({ newsItems }: ProjectNewsProps) => {
             {newsItems.map((item, index) => (
               <div key={index} className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-700 mb-4">{item.description}</p>
+                <p className="text-gray-700 mb-4 text-justify">{item.description}</p>
                 <Button 
                   variant="outline" 
                   className="flex items-center gap-2"

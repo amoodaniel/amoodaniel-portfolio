@@ -42,21 +42,21 @@ const ProjectHeroSection = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{title}</h1>
-            <p className="text-xl text-gray-700 mb-8">{description}</p>
+            <p className="text-xl text-gray-700 mb-8 text-justify">{description}</p>
             
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-3">Problem Statement</h2>
-              <p className="text-gray-700">{problemStatement}</p>
+              <p className="text-gray-700 text-justify">{problemStatement}</p>
             </div>
             
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-3">Solution Statement</h2>
-              <div className="text-gray-700 whitespace-pre-line">{solutionStatement}</div>
+              <div className="text-gray-700 whitespace-pre-line text-justify">{solutionStatement}</div>
             </div>
             
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-3">Target Audience</h2>
-              <p className="text-gray-700">{targetAudience}</p>
+              <p className="text-gray-700 text-justify">{targetAudience}</p>
             </div>
             
             {citation && (

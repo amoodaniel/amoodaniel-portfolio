@@ -23,7 +23,7 @@ const ProjectImpact = ({ impactItems }: ProjectImpactProps) => {
               className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
-              <p className="text-gray-700">{item.description}</p>
+              <p className="text-gray-700 text-justify">{item.description}</p>
             </div>
           ))}
         </div>
