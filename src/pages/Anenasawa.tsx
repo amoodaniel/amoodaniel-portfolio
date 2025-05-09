@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ContactSection from '@/components/ContactSection';
 import ProjectHeroSection from '@/components/ProjectHeroSection';
 import ProjectApproach from '@/components/ProjectApproach';
 import ProjectDeliverables from '@/components/ProjectDeliverables';
@@ -13,7 +13,7 @@ const Anenasawa = () => {
   const projectData = {
     title: "Anenasawa - A GBV Response Bot",
     description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
-    problemStatement: "In South Sudan, where up to 65% of women and girls experience gender-based violence (GBV), community outreach workers play a critical role in identifying and referring cases. However, due to limited connectivity, low digital literacy, and reliance on insecure and costly paper documentation, this process is slow, difficult to monitor, and prone to safety and confidentiality risks. Existing digital systems like GBVIMS+ only support later stages of case management, leaving a major gap in the initial identification and referral process—an essential first step that remains manual, fragmented, and inefficient.",
+    problemStatement: "In South Sudan, where up to 65% of women and girls experience gender-based violence (GBV), community outreach workers play a critical role in identifying and referring cases [1]. However, due to limited connectivity, low digital literacy, and reliance on insecure and costly paper documentation, this process is slow, difficult to monitor, and prone to safety and confidentiality risks. Existing digital systems like GBVIMS+ only support later stages of case management, leaving a major gap in the initial identification and referral process—an essential first step that remains manual, fragmented, and inefficient.",
     solutionStatement: "To bridge the critical gap between GBV case identification and digital case management in South Sudan, I developed Anenasawa—a WhatsApp-based reporting chat bot designed for community outreach workers operating in low-connectivity settings. Anenasawa streamlines the process of identifying, assessing, and referring GBV cases through structured, user-friendly chat flows tailored for both activity reviews and client disclosures. The bot ensures confidentiality by automatically deleting chat histories after submission while securely transmitting data to an integrated case management system.\n\nComplementing the bot is a real-time dashboard that displays incoming disclosures, tracks the assigned case workers, and monitors the status of each case—whether ongoing, referred, or discarded. This ensures full accountability and visibility throughout the referral and response process. By reducing reliance on paper forms, simplifying data collection, and enabling better oversight, Anenasawa empowers outreach workers and case managers alike to respond more efficiently and effectively to GBV incidents.",
     targetAudience: "7,080 beneficiaries (880 direct and 6200 indirect beneficiaries)",
     imageUrl: "/lovable-uploads/b8d90206-4440-480f-86cb-cc1228693e46.png",
@@ -64,20 +64,19 @@ const Anenasawa = () => {
         description={projectData.description}
         problemStatement={projectData.problemStatement}
         solutionStatement={projectData.solutionStatement}
-        targetAudience={projectData.targetAudience}
         citation={projectData.citation}
         imageUrl={projectData.imageUrl}
       />
       <ProjectProblemSolution 
         problemStatement={projectData.problemStatement}
         solutionStatement={projectData.solutionStatement}
-        targetAudience={projectData.targetAudience}
         citation={projectData.citation}
       />
       <ProjectApproach approach={projectData.approach} />
       <ProjectDeliverables deliverables={projectData.deliverables} />
       <ProjectImpact impactItems={projectData.impact} />
       <ProjectNews newsItems={projectData.news} />
+      <ContactSection />
       <Footer />
     </div>
   );

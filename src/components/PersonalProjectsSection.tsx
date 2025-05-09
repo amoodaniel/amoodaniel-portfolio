@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ExternalLink, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,7 @@ const PersonalProjectsSection = () => {
     {
       title: "Sales-Analysis-with-Pyspark",
       description: "A project analyzing sales data using PySpark's distributed processing for scalable data analytics.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/pyspark_sales_logo.jpg",
       tags: ["Jupyter Notebook", "PySpark"],
       category: "data",
       link: "https://github.com/amoodaniel/Sales-Analysis-with-Pyspark"
@@ -19,7 +18,7 @@ const PersonalProjectsSection = () => {
     {
       title: "LLM-hiring-system-analysis",
       description: "An exploration of hiring systems using LLMs, potentially examining bias, performance, and fairness in AI-driven recruitment tools.",
-      image: "placeholder.svg",
+      image: "/lovable-uploads/llm_logo.jpg",
       tags: ["Jupyter Notebook"],
       category: "ai",
       link: "https://github.com/amoodaniel/LLM-hiring-system-analysis"
@@ -115,10 +114,8 @@ const PersonalProjectsSection = () => {
           {filteredProjects.map((project, index) => (
             <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm">
               <div className="h-48 bg-gray-100 flex items-center justify-center">
-                {/* Placeholder for project image */}
-                <div className="p-6 bg-gray-200 rounded-full">
-                  <ExternalLink className="w-8 h-8 text-gray-400" />
-                </div>
+                {/* Project image */}
+                <img src={project.image} alt={project.title} className="object-cover h-full w-full" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Video, FileText, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -12,7 +11,8 @@ const ContentSection = () => {
       description: "Weekly videos exploring how technology can be used to address humanitarian challenges.",
       icon: <Video className="w-5 h-5" />,
       buttonText: "Watch Videos",
-      link: "https://www.youtube.com/@amoodaniel"
+      link: "https://www.youtube.com/@amoodaniel",
+      image: '/lovable-uploads/video.JPG'
     },
     {
       title: "Tech Blog",
@@ -20,7 +20,8 @@ const ContentSection = () => {
       description: "In-depth articles about technology implementation in humanitarian contexts.",
       icon: <FileText className="w-5 h-5" />,
       buttonText: "Read Articles",
-      link: "https://amoodaniel.medium.com/list/amoos-tech-articles-0bccbf7a8830"
+      link: "https://amoodaniel.medium.com/list/amoos-tech-articles-0bccbf7a8830",
+      image: '/lovable-uploads/Blog.jpeg'
     }
   ];
 
@@ -45,11 +46,16 @@ const ContentSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {contentItems.map((item, index) => (
             <Card key={index} className="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gray-100 flex items-center justify-center">
-                {/* Placeholder for content thumbnail */}
-                <div className="p-4 bg-gray-200 rounded-full">
-                  {item.icon}
-                </div>
+              <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                {item.title === 'Tech for Good Series' ? (
+                  <img src="/lovable-uploads/video.JPG" alt="Tech for Good Series" className="object-cover w-full h-full" />
+                ) : item.title === 'Tech Blog' ? (
+                  <img src="/lovable-uploads/Blog2.JPG" alt="Tech Blog" className="object-cover w-full h-full" />
+                ) : (
+                  <div className="p-4 bg-gray-200 rounded-full">
+                    {item.icon}
+                  </div>
+                )}
               </div>
               <CardContent className="pt-6 px-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>

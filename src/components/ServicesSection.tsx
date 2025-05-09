@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BookOpen, Shield, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -58,11 +57,6 @@ const ServicesSection = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </CardContent>
-              <CardFooter className="px-6 py-4">
-                <Button variant="ghost" className="text-gray-800 hover:text-black p-0 h-auto font-medium">
-                  Learn More
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>
