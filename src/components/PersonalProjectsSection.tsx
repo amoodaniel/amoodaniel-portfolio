@@ -13,7 +13,7 @@ const PersonalProjectsSection = () => {
       image: "/lovable-uploads/invoicenomad.png",
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       category: "web",
-      link: "https://github.com/amoodaniel/pro-invoice-plus-creator"
+      link: "https://invoicenomad.com"
     },
     {
       title: "Recommendation-system-using-twitter-data",
@@ -29,7 +29,7 @@ const PersonalProjectsSection = () => {
       image: "/lovable-uploads/portfolio.png",
       tags: ["HTML", "CSS", "JavaScript"],
       category: "web",
-      link: "https://github.com/amoodaniel/Portfolio-option-1"
+      link: "https://github.com/amoodaniel/amoodaniel-portfolio"
     },
     {
       title: "Sales-Analysis-with-Pyspark",
