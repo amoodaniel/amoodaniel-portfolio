@@ -8,6 +8,30 @@ const PersonalProjectsSection = () => {
   
   const projects = [
     {
+      title: "Invoice Nomad",
+      description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
+      image: "/lovable-uploads/invoicenomad.png",
+      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      category: "web",
+      link: "https://github.com/amoodaniel/pro-invoice-plus-creator"
+    },
+    {
+      title: "Recommendation-system-using-twitter-data",
+      description: "This project focuses on developing an intelligent recommender system by integrating collaborative filtering with social network analysis (SNA) using Twitter data.",
+      image: "/lovable-uploads/recommend.webp",
+      tags: ["Python", "NetworkX", "Pandas", "Scikit-learn", "Twitter API"],
+      category: "ai",
+      link: "https://github.com/amoodaniel/Recommendation-system-using-twitter-data"
+    },
+    {
+      title: "Portfolio-Website",
+      description: "A personal site built to highlight professional experience, projects, and contact details.",
+      image: "/lovable-uploads/portfolio.png",
+      tags: ["HTML", "CSS", "JavaScript"],
+      category: "web",
+      link: "https://github.com/amoodaniel/Portfolio-option-1"
+    },
+    {
       title: "Sales-Analysis-with-Pyspark",
       description: "A project analyzing sales data using PySpark's distributed processing for scalable data analytics.",
       image: "/lovable-uploads/pyspark_sales_logo.jpg",
@@ -30,30 +54,6 @@ const PersonalProjectsSection = () => {
       tags: ["Python"],
       category: "ai",
       link: "https://github.com/amoodaniel/AI-PDF-summarizer"
-    },
-    {
-      title: "Portfolio-Website",
-      description: "A personal site built to highlight professional experience, projects, and contact details.",
-      image: "/lovable-uploads/portfolio.png",
-      tags: ["HTML", "CSS", "JavaScript"],
-      category: "web",
-      link: "https://github.com/amoodaniel/Portfolio-option-1"
-    },
-    {
-      title: "Invoice Nomad",
-      description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
-      image: "/lovable-uploads/invoicenomad.png",
-      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-      category: "web",
-      link: "https://github.com/amoodaniel/pro-invoice-plus-creator"
-    },
-    {
-      title: "Recommendation-system-using-twitter-data",
-      description: "This project focuses on developing an intelligent recommender system by integrating collaborative filtering with social network analysis (SNA) using Twitter data.",
-      image: "/lovable-uploads/recommend.webp",
-      tags: ["Python", "NetworkX", "Pandas", "Scikit-learn", "Twitter API"],
-      category: "ai",
-      link: "https://github.com/amoodaniel/Recommendation-system-using-twitter-data"
     }
   ];
 
