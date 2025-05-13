@@ -39,7 +39,7 @@ const Navbar = () => {
               <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-white font-bold text-lg">
                 AD
               </div>
-              <span className="hidden sm:inline">Amoo Daniel</span>
+              <span className="hidden sm:inline">AMOO.DEV</span>
             </Link>
           </div>
           
