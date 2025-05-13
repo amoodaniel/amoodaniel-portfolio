@@ -8,15 +8,15 @@ import ContactSection from '@/components/ContactSection';
 const MajiMonitor = () => {
   const projectData = {
     title: "Maji Monitor",
-    description: "A reporting bot that streamlines the collection and real-time tracking of water access issues in underserved communities.",
+    description: "A reporting system that streamlines the collection and real-time tracking of water access issues in underserved communities.",
     problemStatement: "Communities in conflict-affected and water-scarce regions such as Turkana West Sub-County are heavily reliant on NGOs and WASH professionals for the maintenance and monitoring of water sources. This dependence leads to delayed responses to service issues, inadequate water quality testing, and exacerbates water scarcity problems.",
-    solutionStatement: "",
+    solutionStatement: "Undisclosed",
     targetAudience: "50,000+ community members across 20 underserved communities",
     imageUrl: "/lovable-uploads/maji-monitor-hero.jpg",
     citation: "",
     funding: "Undisclosed",
-    location: "Malawi, Kenya",
-    techStack: ["Python", "Twilio", "ElevenLabs"],
+    location: "TBD",
+    techStack: ["TBD"],
   };
 
   const DevSection = ({ title }: { title: string }) => (
