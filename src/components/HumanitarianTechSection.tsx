@@ -47,16 +47,16 @@ const HumanitarianTechSection = () => {
               <div key={index}>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <Button 
-                  variant="outline" 
-                  className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
-                  asChild
-                >
-                  <Link to={project.link}>
-                    View Project
-                    <ExternalLink className="w-4 h-4" />
-                  </Link>
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="flex items-center gap-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
+                    asChild
+                  >
+                    <Link to={project.link}>
+                      View Project
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  </Button>
               </div>
             ))}
           </div>

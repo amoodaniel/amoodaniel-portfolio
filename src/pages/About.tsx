@@ -30,7 +30,7 @@ const About = () => {
               </div>
               <div className="text-gray-500 text-xs mb-1">Digital Information Officer</div>
               <p className="text-gray-700 mb-1 text-justify">
-              I support humanitarian teams by developing digital tools that improve the speed and efficiency of fieldwork. A key project I lead is a WhatsApp bot for GBV outreach in South Sudan, created to streamline case reporting. I built a custom Python integration to connect the Turn.io with Airtable, and developed a real-time dashboard using Streamlit, enabling managers to instantly monitor field data and identify emerging patterns.
+              I support humanitarian teams by developing digital tools that improve the speed and efficiency of field operations. One of the key projects I lead is the development of a WhatsApp bot for GBV outreach in South Sudan, created to streamline case reporting.
               </p>
               <div className="flex flex-wrap gap-2 mb-2">
                 <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>

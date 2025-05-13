@@ -27,9 +27,9 @@ const ProjectHeroSection = ({
   ...otherProps // We'll keep these props but use them in other sections 
 }: ProjectHeroSectionProps) => {
   // Default values if not provided
-  const displayFunding = funding || '£149,082+';
+  const displayFunding = funding || '£149,000+';
   const displayLocation = location || 'South Sudan';
-  const displayTechStack = techStack || ['Python', 'DSL', 'Streamlit', 'Ruby'];
+  const displayTechStack = techStack || ['Python', 'Airtable', 'Streamlit', 'Ruby'];
 
   return (
     <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">

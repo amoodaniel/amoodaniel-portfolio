@@ -46,15 +46,22 @@ const ContentSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {contentItems.map((item, index) => (
             <Card key={index} className="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden">
-              <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+              <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden relative">
                 {item.title === 'Tech for Good Series' ? (
-                  <img src="/lovable-uploads/video.JPG" alt="Tech for Good Series" className="object-cover w-full h-full" />
+                  <>
+                    <img src="/lovable-uploads/video.JPG" alt="Tech for Good Series" className="object-cover w-full h-full" />
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="bg-white bg-opacity-80 rounded-full p-3 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-red-600" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/><polygon points="10,8 16,12 10,16" fill="currentColor"/></svg>
+                      </span>
+                    </span>
+                  </>
                 ) : item.title === 'Tech Blog' ? (
                   <img src="/lovable-uploads/Blog2.JPG" alt="Tech Blog" className="object-cover w-full h-full" />
                 ) : (
-                  <div className="p-4 bg-gray-200 rounded-full">
-                    {item.icon}
-                  </div>
+                <div className="p-4 bg-gray-200 rounded-full">
+                  {item.icon}
+                </div>
                 )}
               </div>
               <CardContent className="pt-6 px-6">

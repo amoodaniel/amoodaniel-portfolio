@@ -64,13 +64,13 @@ const Navbar = () => {
                   {link.title}
                 </Link>
               ) : (
-                <a
-                  key={link.title}
-                  href={link.href}
-                  className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
-                >
-                  {link.title}
-                </a>
+              <a
+                key={link.title}
+                href={link.href}
+                className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+              >
+                {link.title}
+              </a>
               )
             ))}
           </nav>
@@ -112,14 +112,14 @@ const Navbar = () => {
                   {link.title}
                 </Link>
               ) : (
-                <a
-                  key={link.title}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-gray-900 font-medium py-2"
-                >
-                  {link.title}
-                </a>
+              <a
+                key={link.title}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+              >
+                {link.title}
+              </a>
               )
             ))}
           </div>

@@ -33,15 +33,16 @@ const HeroSection = () => {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-            I help organizations <br className="hidden md:block" />
-            amplify their impact <br className="hidden md:block" /> 
-            through <span className="relative inline-flex items-center">
-              smart
-              <span className="flex absolute -right-2 top-1/2 -translate-y-1/2 md:translate-y-0 md:relative md:inline-flex md:ml-1 md:mr-1 md:top-0">
-                ,
-              </span>
-            </span> user-focused technology.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <span className="block md:whitespace-nowrap">
+              I build innovative, user-first tools
+            </span>
+            <span className="block">
+              that empower organizations
+            </span>
+            <span className="block">
+              to amplify their impact
+            </span>
           </h1>
           
           <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">

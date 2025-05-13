@@ -23,14 +23,14 @@ const TrustedBySection = () => {
           <div className="flex items-center gap-8 animate-marquee whitespace-nowrap">
             {partners.concat(partners).map((partner, index) => (
               <div key={index} className="p-4 flex items-center justify-center h-24 opacity-80 hover:opacity-100 transition-all duration-300">
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="h-16 w-auto object-contain"
-                  style={{ maxWidth: partner.width }}
-                />
-              </div>
-            ))}
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`} 
+                        className="h-16 w-auto object-contain" 
+                        style={{ maxWidth: partner.width }}
+                      />
+                    </div>
+                ))}
           </div>
         </div>
         <style>{`
