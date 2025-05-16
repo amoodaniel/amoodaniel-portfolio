@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -47,9 +48,8 @@ const MajiMonitor = () => {
       />
       <ProjectProblemSolution 
         problemStatement={projectData.problemStatement}
-        solutionStatement={''}
-        targetAudience={''}
-        citation={''}
+        solutionStatement={projectData.solutionStatement}
+        citation={projectData.citation}
       />
       <DevSection title="Approach" />
       <DevSection title="Deliverables" />
