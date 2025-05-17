@@ -46,7 +46,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="mt-8 text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your organization's humanitarian mission through innovative tech?
+            Ready to transform your organization's humanitarian mission through innovation?
           </p>
           
           <div className="mt-12 flex justify-center">
