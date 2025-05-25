@@ -16,6 +16,14 @@ const PersonalProjectsSection = () => {
       link: "https://invoicenomad.com"
     },
     {
+      title: "LLM Hiring System Analysis",
+      description: "Made an indepth analysis of the Pariti LLM hiring model. My analysis revealed the most common applicants country, the populated hiring stage, the most sought after job, and how the llm performs in filtering qualified candidates for the job.",
+      image: "/lovable-uploads/pariti.png",
+      tags: ["Python", "Data Analysis", "LLM"],
+      category: "data",
+      link: "https://github.com/amoodaniel/LLM-hiring-system-analysis"
+    },
+    {
       title: "Recommendation-system-using-twitter-data",
       description: "This project focuses on developing an intelligent recommender system by integrating collaborative filtering with social network analysis (SNA) using Twitter data.",
       image: "/lovable-uploads/recommend.webp",
@@ -38,14 +46,6 @@ const PersonalProjectsSection = () => {
       tags: ["Jupyter Notebook", "PySpark"],
       category: "data",
       link: "https://github.com/amoodaniel/Sales-Analysis-with-Pyspark"
-    },
-    {
-      title: "LLM-hiring-system-analysis",
-      description: "An exploration of hiring systems using LLMs, potentially examining bias, performance, and fairness in AI-driven recruitment tools.",
-      image: "/lovable-uploads/llm_logo.jpg",
-      tags: ["Jupyter Notebook"],
-      category: "ai",
-      link: "https://github.com/amoodaniel/LLM-hiring-system-analysis"
     },
     {
       title: "AI-PDF-summarizer",
