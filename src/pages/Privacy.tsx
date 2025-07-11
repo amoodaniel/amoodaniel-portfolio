@@ -174,7 +174,6 @@ const Privacy = () => {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-gray-700">
-                    <strong>Email:</strong> amoodaniel99@gmail.com<br />
                     <strong>Website:</strong> https://amoodaniel.com
                   </p>
                 </div>
