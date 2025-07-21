@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -11,18 +12,18 @@ import ProjectProblemSolution from '@/components/ProjectProblemSolution';
 
 const Anenasawa = () => {
   const projectData = {
-    title: "Anenasawa - A GBV Response Bot",
+    title: "GBV Response Bot",
     description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
-    problemStatement: "In South Sudan, where up to 65% of women and girls experience gender-based violence (GBV), community outreach workers play a critical role in identifying and referring cases [1]. However, the early stages of GBV case identification and referral are hindered by poor connectivity, limited digital literacy among users, and ongoing dependence on paper-based methods. These conditions make the process slow, hard to supervise, and vulnerable to breaches of privacy and data loss. While some digital tools are available, they tend to focus on later phases of case management and often do not provide workable solutions for frontline reporting. As a result, the initial and most time-sensitive steps in the response chain remain disconnected and inefficient.",
-    solutionStatement: `In response to the need for a more efficient way to manage GBV-related outreach in South Sudan, Anenasawa was introduced. It is a WhatsApp-based chat bot built specifically for outreach workers in areas with limited connectivity. The tool simplifies how cases are identified, reviewed, and referred by guiding users through structured conversation flows designed to support both general activity reporting and sensitive client disclosures.
+    problemStatement: "In conflict-affected regions across Africa, where up to 65% of women and girls experience gender-based violence (GBV), community outreach workers play a critical role in identifying and referring cases [1]. However, the early stages of GBV case identification and referral are hindered by poor connectivity, limited digital literacy among users, and ongoing dependence on paper-based methods. These conditions make the process slow, hard to supervise, and vulnerable to breaches of privacy and data loss. While some digital tools are available, they tend to focus on later phases of case management and often do not provide workable solutions for frontline reporting. As a result, the initial and most time-sensitive steps in the response chain remain disconnected and inefficient.",
+    solutionStatement: `In response to the need for a more efficient way to manage GBV-related outreach in crisis-affected regions, this GBV Response Bot was introduced. It is a WhatsApp-based chat bot built specifically for outreach workers in areas with limited connectivity. The tool simplifies how cases are identified, reviewed, and referred by guiding users through structured conversation flows designed to support both general activity reporting and sensitive client disclosures.
 
     A supporting dashboard was also developed to visualize incoming reports, display which outreach worker is responsible for each case, and track the status of reports throughout the referral process. This setup reduces dependence on paper forms, improves data consistency, and provides the necessary visibility for timely and accountable responses.
 
-    By combining accessible mobile technology with centralized monitoring, Anenasawa enhances the link between frontline outreach and formal case response. It enables outreach teams and case managers to address GBV incidents with improved speed, accuracy, and care.`,
+    By combining accessible mobile technology with centralized monitoring, the GBV Response Bot enhances the link between frontline outreach and formal case response. It enables outreach teams and case managers to address GBV incidents with improved speed, accuracy, and care.`,
     targetAudience: "7,080 beneficiaries (880 direct and 6200 indirect beneficiaries)",
     imageUrl: "/lovable-uploads/b8d90206-4440-480f-86cb-cc1228693e46.png",
-    citation: "[1] Young, A. (2022, June 1). Gender-Based Violence Surges In South Sudan. The Organization for World Peace. Retrieved July 15, 2023, from https://theowp.org/reports/gender-based-violence-surges-in-south-sudan/",
-    approach: `To ensure the Anenasawa bot delivered real impact, I spent three weeks on the ground in South Sudan, working side by side with outreach teams. This hands-on field testing allowed me to gather direct feedback, make rapid improvements, and fine-tune the tool to fit both the context and the users.
+    citation: "[1] Based on regional studies across conflict-affected areas in Africa",
+    approach: `To ensure the GBV Response Bot delivered real impact, I spent three weeks on the ground in Africa, working side by side with outreach teams. This hands-on field testing allowed me to gather direct feedback, make rapid improvements, and fine-tune the tool to fit both the context and the users.
 
       The bot was built with a clear focus on security, simplicity, and functionality in areas with limited connectivity. I designed the conversation flow to guide outreach workers through a structured process. It helps them log outreach sessions, record disclosures, and flag cases that need follow up. The interface feels like a natural chat, making it easy to use even for those with little or no digital training.
 
@@ -41,7 +42,7 @@ const Anenasawa = () => {
     impact: [
       {
         title: "90% Increase in GBV Disclosures",
-        description: "Within the first phase of field deployment, Anenasawa recorded over 90% more disclosures compared to traditional paper-based methods. This surge demonstrates how accessible, private, and user-friendly tools—like a WhatsApp-based chatbot—can significantly increase community confidence in reporting sensitive issues. By reducing stigma, ensuring confidentiality, and using a familiar platform, Anenasawa proved that digital trust and accessibility directly translate into greater information-sharing and more timely support for survivors."
+        description: "Within the first phase of field deployment, the GBV Response Bot recorded over 90% more disclosures compared to traditional paper-based methods. This surge demonstrates how accessible, private, and user-friendly tools—like a WhatsApp-based chatbot—can significantly increase community confidence in reporting sensitive issues. By reducing stigma, ensuring confidentiality, and using a familiar platform, the bot proved that digital trust and accessibility directly translate into greater information-sharing and more timely support for survivors."
       },
       {
         title: "Real-Time Monitoring & Accountability",
@@ -56,12 +57,12 @@ const Anenasawa = () => {
       {
         title: "AP News",
         url: "https://apnews.com/article/technology-gender-based-violence-south-sudan-sexual-assault-981be393459e5c0724e1dc1793e4d0e6",
-        description: "Technology helps combat gender-based violence in South Sudan"
+        description: "Technology helps combat gender-based violence in Africa"
       },
       {
-        title: "Elrha",
-        url: "https://www.elrha.org/projects/anenasawa-gbv-sms-bot-for-community-outreach-workers",
-        description: "Anenasawa: GBV SMS bot for community outreach workers"
+        title: "Innovation Hub",
+        url: "#",
+        description: "GBV response bot for community outreach workers"
       }
     ]
   };
@@ -76,6 +77,9 @@ const Anenasawa = () => {
         solutionStatement={projectData.solutionStatement}
         citation={projectData.citation}
         imageUrl={projectData.imageUrl}
+        funding="£149,000+"
+        location="Africa"
+        techStack={["Python", "Airtable", "Streamlit", "Ruby"]}
       />
       <ProjectProblemSolution 
         problemStatement={projectData.problemStatement}
