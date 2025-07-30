@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,11 +10,6 @@ const HumanitarianTechSection = () => {
       title: "GBV Intervention Chatbot",
       description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
       link: "/gbv-bot"
-    },
-    {
-      title: "Maji Monitor",
-      description: "A reporting bot that streamlines the collection and real-time tracking of water access issues in underserved communities.",
-      link: "/maji-monitor"
     }
   ];
 
