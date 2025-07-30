@@ -12,7 +12,7 @@ import ProjectProblemSolution from '@/components/ProjectProblemSolution';
 
 const Anenasawa = () => {
   const projectData = {
-    title: "Anenasawa - A GBV Response Bot",
+    title: "GBV Intervention Chatbot",
     description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
     problemStatement: "In many regions across Africa, where significant portions of women and girls experience gender-based violence (GBV), community outreach workers play a critical role in identifying and referring cases. However, the early stages of GBV case identification and referral are hindered by poor connectivity, limited digital literacy among users, and ongoing dependence on paper-based methods. These conditions make the process slow, hard to supervise, and vulnerable to breaches of privacy and data loss. While some digital tools are available, they tend to focus on later phases of case management and often do not provide workable solutions for frontline reporting. As a result, the initial and most time-sensitive steps in the response chain remain disconnected and inefficient.",
     solutionStatement: `To address the need for more efficient GBV-related outreach management, Anenasawa was developed as a WhatsApp-based chatbot specifically designed for outreach workers in areas with limited connectivity. The tool simplifies how cases are identified, reviewed, and referred by guiding users through structured conversation flows designed to support both general activity reporting and sensitive client disclosures.
@@ -62,7 +62,7 @@ const Anenasawa = () => {
       {
         title: "Elrha",
         url: "https://www.elrha.org/projects/anenasawa-gbv-sms-bot-for-community-outreach-workers",
-        description: "Anenasawa: GBV response bot for community outreach workers"
+        description: "GBV Intervention Chatbot: GBV response bot for community outreach workers"
       }
     ]
   };

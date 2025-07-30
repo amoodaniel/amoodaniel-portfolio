@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const HumanitarianTechSection = () => {
   const projects = [
     {
-      title: "Anenasawa - A GBV Response Bot",
-      description: "Anenesawa is a WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
-      link: "/anenasawa"
+      title: "GBV Intervention Chatbot",
+      description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
+      link: "/gbv-bot"
     },
     {
       title: "Maji Monitor",
