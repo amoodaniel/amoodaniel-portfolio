@@ -32,8 +32,8 @@ const HumanitarianTechSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center overflow-hidden">
             <img 
-              src="/lovable-uploads/humanitarian-section.jpg" 
-              alt="Humanitarian project" 
+              src="/lovable-uploads/1b2f3abe-a961-43d3-baac-37bfe6b46796.png" 
+              alt="GBV Intervention Chatbot" 
               className="object-cover w-full h-full" 
             />
           </div>

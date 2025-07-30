@@ -21,7 +21,7 @@ const Anenasawa = () => {
 
     By combining accessible mobile technology with centralized monitoring, Anenasawa enhances the link between frontline outreach and formal case response. It enables outreach teams and case managers to address GBV incidents with improved speed, accuracy, and care.`,
     targetAudience: "7,080 beneficiaries (880 direct and 6200 indirect beneficiaries)",
-    imageUrl: "/lovable-uploads/b8d90206-4440-480f-86cb-cc1228693e46.png",
+    imageUrl: "/lovable-uploads/1b2f3abe-a961-43d3-baac-37bfe6b46796.png",
     citation: "",
     approach: `The development process involved extensive field research and user testing to ensure the bot delivered real impact in challenging environments. Direct collaboration with outreach teams allowed for rapid feedback incorporation and iterative improvements to fit both the context and the users' needs.
 
