@@ -14,7 +14,7 @@ const PersonalProjectsSection = () => {
       image: "/lovable-uploads/9d6435a7-ae28-43d7-b0e2-64d975d4dece.png",
       tags: ["WordPress", "HTML", "CSS", "Elementor"],
       category: "web",
-      link: "#"
+      link: "https://schemeroyal.com"
     },
     {
       title: "Invoice Nomad",
