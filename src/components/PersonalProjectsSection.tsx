@@ -25,6 +25,14 @@ const PersonalProjectsSection = () => {
       link: "https://smartcu.covenantuniversity.edu.ng/"
     },
     {
+      title: "RCE Ogun Website",
+      description: "Developed the RCE Ogun website for the Regional Center of Expertise in Education for Sustainable Development. Built with WordPress and enhanced with HTML, CSS, and Elementor to create an engaging platform for community education and sustainable development initiatives.",
+      image: "/lovable-uploads/7842a781-f78f-4b40-8633-2677d76167ed.png",
+      tags: ["WordPress", "HTML", "CSS", "Elementor"],
+      category: "web",
+      link: "https://web.archive.org/web/20240810094026/http://rceogun.covenantuniversity.edu.ng/"
+    },
+    {
       title: "Invoice Nomad",
       description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
       image: "/lovable-uploads/invoicenomad.png",
