@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,7 +11,7 @@ import Anenasawa from "./pages/Anenasawa";
 import MajiMonitor from "./pages/MajiMonitor";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
@@ -21,26 +23,28 @@ function ScrollToTop() {
   return null;
 }
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/anenasawa" element={<Anenasawa />} />
-          <Route path="/gbv-bot" element={<Anenasawa />} />
-          <Route path="/maji-monitor" element={<MajiMonitor />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<Privacy />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/anenasawa" element={<Anenasawa />} />
+            <Route path="/gbv-bot" element={<Anenasawa />} />
+            <Route path="/maji-monitor" element={<MajiMonitor />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </TooltipProvider>
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;
