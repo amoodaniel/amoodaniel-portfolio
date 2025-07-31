@@ -19,7 +19,7 @@ const PersonalProjectsSection = () => {
     {
       title: "Smart CU Website",
       description: "A comprehensive university portal for Covenant University students and faculty, featuring academic resources, announcements, and administrative tools. Built with WordPress and enhanced with Elementor for a seamless user experience across all devices.",
-      image: "/lovable-uploads/1c7679f1-48e2-48c7-bece-661f9b6422ae.png",
+      image: "/lovable-uploads/bcf5dc6e-3083-42ac-906d-146cd3653492.png",
       tags: ["WordPress", "HTML", "CSS", "Elementor"],
       category: "web",
       link: "https://smartcu.covenantuniversity.edu.ng/"
@@ -74,12 +74,10 @@ const PersonalProjectsSection = () => {
     }
   ];
 
-  // Update category filter to include data, ai, and learning categories
   const filteredProjects = activeTab === 'all' 
     ? projects 
     : projects.filter(project => project.category === activeTab);
   
-  // Limit to 6 projects unless showAll is true
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
   const hasMoreProjects = filteredProjects.length > 6;
 
@@ -135,7 +133,6 @@ const PersonalProjectsSection = () => {
           {displayedProjects.map((project, index) => (
             <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm">
               <div className="h-48 bg-gray-100 flex items-center justify-center">
-                {/* Project image */}
                 <img src={project.image} alt={project.title} className="object-cover h-full w-full" />
               </div>
               <div className="p-6">
