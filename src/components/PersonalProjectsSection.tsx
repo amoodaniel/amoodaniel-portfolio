@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 
 const PersonalProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [showAll, setShowAll] = useState(false);
   
   const projects = [
     {
@@ -69,6 +70,10 @@ const PersonalProjectsSection = () => {
   const filteredProjects = activeTab === 'all' 
     ? projects 
     : projects.filter(project => project.category === activeTab);
+  
+  // Limit to 6 projects unless showAll is true
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+  const hasMoreProjects = filteredProjects.length > 6;
 
   return (
     <section id="personal-projects" className="py-24 lg:py-32 bg-white">
@@ -119,7 +124,7 @@ const PersonalProjectsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {filteredProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm">
               <div className="h-48 bg-gray-100 flex items-center justify-center">
                 {/* Project image */}
@@ -149,6 +154,18 @@ const PersonalProjectsSection = () => {
             </div>
           ))}
         </div>
+
+        {hasMoreProjects && !showAll && (
+          <div className="text-center mt-12">
+            <Button 
+              variant="outline" 
+              className="border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white rounded-md"
+              onClick={() => setShowAll(true)}
+            >
+              Show More Projects
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
