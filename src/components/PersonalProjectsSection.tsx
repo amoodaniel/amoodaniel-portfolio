@@ -17,6 +17,14 @@ const PersonalProjectsSection = () => {
       link: "https://schemeroyal.com"
     },
     {
+      title: "Smart CU Website",
+      description: "A comprehensive university portal for Covenant University students and faculty, featuring academic resources, announcements, and administrative tools. Built with WordPress and enhanced with Elementor for a seamless user experience across all devices.",
+      image: "/lovable-uploads/1c7679f1-48e2-48c7-bece-661f9b6422ae.png",
+      tags: ["WordPress", "HTML", "CSS", "Elementor"],
+      category: "web",
+      link: "https://smartcu.covenantuniversity.edu.ng/"
+    },
+    {
       title: "Invoice Nomad",
       description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
       image: "/lovable-uploads/invoicenomad.png",
