@@ -8,6 +8,14 @@ const PersonalProjectsSection = () => {
   
   const projects = [
     {
+      title: "Scheme Royal Limited Website",
+      description: "A professional corporate website for Scheme Royal Limited, featuring modern design and user-friendly navigation. Built with WordPress and enhanced with custom HTML/CSS styling and Elementor page builder for optimal performance and visual appeal.",
+      image: "/lovable-uploads/9d6435a7-ae28-43d7-b0e2-64d975d4dece.png",
+      tags: ["WordPress", "HTML", "CSS", "Elementor"],
+      category: "web",
+      link: "#"
+    },
+    {
       title: "Invoice Nomad",
       description: "Invoice-Nomad is a web-based invoicing application designed to help freelancers and small businesses generate, manage, and track invoices efficiently.",
       image: "/lovable-uploads/invoicenomad.png",
