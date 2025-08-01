@@ -188,58 +188,171 @@ const ChatbotOffer = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Investment Options</h2>
-          <p className="text-xl text-primary-foreground/80 mb-16 leading-relaxed">
-            Transparent pricing designed for NGO budgets
-          </p>
+      <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="w-full h-full bg-gradient-to-br from-primary-foreground/5 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 max-w-6xl text-center relative z-10">
+          <div className="mb-12">
+            <Badge className="bg-destructive text-destructive-foreground mb-6 px-4 py-2 text-sm font-bold animate-pulse">
+              ⏰ URGENT: Only 3 spots left this quarter
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Choose Your <span className="text-accent">Transformation</span> Package
+            </h2>
+            <p className="text-xl text-primary-foreground/90 mb-4 leading-relaxed max-w-3xl mx-auto">
+              ROI-focused solutions that pay for themselves through improved efficiency
+            </p>
+            <p className="text-lg text-primary-foreground/80 font-medium">
+              ✓ 30-day money-back guarantee &nbsp;&nbsp; ✓ No hidden fees &nbsp;&nbsp; ✓ Payment plans available
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-8 text-center border-2">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            {/* Standard Package */}
+            <Card className="p-8 text-center border-2 border-border bg-background text-foreground relative group hover:scale-105 transition-transform duration-300 shadow-2xl">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Standard Package</h3>
-                <div className="text-5xl font-bold text-primary mb-6">From £5,000</div>
-                <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                  Complete chatbot solution with core features and support
-                </p>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">Standard Package</h3>
+                  <p className="text-muted-foreground text-sm">Perfect for single-program NGOs</p>
+                </div>
+                
+                <div className="mb-8">
+                  <div className="text-6xl font-bold text-primary mb-2">£5,000</div>
+                  <p className="text-muted-foreground line-through text-lg">Worth £8,000+</p>
+                  <p className="text-sm text-primary font-semibold">Save £3,000+ vs building in-house</p>
+                </div>
+
+                <div className="text-left space-y-3 mb-8">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">Custom WhatsApp/SMS bot</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">Airtable/Sheets integration</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">Security & consent protocols</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">Staff training included</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">30-day support</span>
+                  </div>
+                </div>
+                
                 <Button 
                   size="lg"
-                  className="w-full py-4 text-lg font-semibold"
+                  className="w-full py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
                   onClick={handleScheduleCall}
                 >
-                  Get Started
+                  Start Your Transformation
+                  <Clock className="w-5 h-5 ml-2" />
                 </Button>
+                
+                <p className="text-xs text-muted-foreground mt-4">
+                  ⚡ Launch in 5 weeks or less
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="p-8 text-center border-2 border-primary bg-primary text-primary-foreground relative overflow-hidden">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground px-4 py-2">
-                <Star className="w-4 h-4 mr-1" />
-                Most Popular
-              </Badge>
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold mb-6">Advanced Package</h3>
-                <div className="text-5xl font-bold mb-6">£8,000 - £10,000+</div>
-                <p className="text-primary-foreground/80 mb-8 text-lg leading-relaxed">
-                  Multi-language, custom dashboards, complex workflows
-                </p>
+            {/* Advanced Package */}
+            <Card className="p-8 text-center border-4 border-accent bg-gradient-to-br from-primary/95 to-primary text-primary-foreground relative group hover:scale-105 transition-transform duration-300 shadow-2xl ring-4 ring-accent/20">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-accent text-accent-foreground px-6 py-2 font-bold text-sm shadow-lg">
+                  <Star className="w-4 h-4 mr-2" />
+                  MOST POPULAR - 70% Choose This
+                </Badge>
+              </div>
+              
+              <CardContent className="p-0 pt-4">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">Advanced Package</h3>
+                  <p className="text-primary-foreground/80 text-sm">For multi-program organizations</p>
+                </div>
+                
+                <div className="mb-8">
+                  <div className="text-6xl font-bold mb-2">£8,000</div>
+                  <p className="text-primary-foreground/70 line-through text-lg">Worth £15,000+</p>
+                  <p className="text-sm text-accent font-semibold">Save £7,000+ vs hiring developers</p>
+                </div>
+
+                <div className="text-left space-y-3 mb-8">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm font-medium">Everything in Standard PLUS:</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm">Multi-language support</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm">Custom M&E dashboard</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm">Complex workflow automation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm">Priority support & updates</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-sm">Advanced analytics & reporting</span>
+                  </div>
+                </div>
+                
                 <Button 
-                  variant="outline" 
+                  variant="secondary"
                   size="lg"
-                  className="w-full py-4 text-lg font-semibold border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="w-full py-4 text-lg font-bold shadow-xl hover:shadow-2xl transition-shadow bg-accent text-accent-foreground hover:bg-accent/90"
                   onClick={handleScheduleCall}
                 >
-                  Discuss Requirements
+                  Scale Your Impact Now
+                  <TrendingUp className="w-5 h-5 ml-2" />
                 </Button>
+                
+                <p className="text-xs text-primary-foreground/80 mt-4">
+                  🚀 Enterprise-grade solution in 6 weeks
+                </p>
               </CardContent>
             </Card>
           </div>
 
-          <div className="mt-12">
-            <Badge variant="secondary" className="px-6 py-3 text-sm font-semibold">
-              💡 Special pilot pricing available for local NGOs and first-time partners
-            </Badge>
+          {/* Additional CTAs and guarantees */}
+          <div className="space-y-6">
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-primary-foreground/90">
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4" />
+                <span>30-day guarantee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                <span>Trusted by 50+ NGOs</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4" />
+                <span>5-week delivery</span>
+              </div>
+            </div>
+            
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+              <p className="text-primary-foreground/90 font-semibold mb-4">
+                🎯 <strong>Limited Time:</strong> Book this week and get FREE priority support worth £2,000
+              </p>
+              <Badge variant="secondary" className="px-6 py-2 text-sm font-semibold">
+                💰 Payment plans available for qualified NGOs
+              </Badge>
+            </div>
           </div>
         </div>
       </section>
