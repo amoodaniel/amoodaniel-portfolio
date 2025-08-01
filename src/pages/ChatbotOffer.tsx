@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowLeft, CheckCircle, Clock, Shield, Zap, Users, BarChart3, Globe, Phone, MessageSquare } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Clock, Shield, Zap, Users, BarChart3, Globe, Phone, MessageSquare, Star, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -23,10 +23,10 @@ const ChatbotOffer = () => {
   ];
 
   const benefits = [
-    { icon: <Clock className="w-5 h-5" />, title: "Rapid Deployment", desc: "Live in under 5 weeks" },
-    { icon: <Shield className="w-5 h-5" />, title: "Security First", desc: "Built-in consent & protection protocols" },
-    { icon: <Globe className="w-5 h-5" />, title: "Offline-Aware", desc: "Works in low-connectivity environments" },
-    { icon: <BarChart3 className="w-5 h-5" />, title: "Donor-Ready", desc: "Real-time M&E dashboards" }
+    { icon: <Clock className="w-6 h-6" />, title: "Rapid Deployment", desc: "Live in under 5 weeks" },
+    { icon: <Shield className="w-6 h-6" />, title: "Security First", desc: "Built-in consent & protection protocols" },
+    { icon: <Globe className="w-6 h-6" />, title: "Offline-Aware", desc: "Works in low-connectivity environments" },
+    { icon: <BarChart3 className="w-6 h-6" />, title: "Donor-Ready", desc: "Real-time M&E dashboards" }
   ];
 
   const included = [
@@ -48,41 +48,42 @@ const ChatbotOffer = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-6 border-b border-border">
         <Button 
           variant="ghost" 
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+          className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
           asChild
         >
           <Link to="/">
-            <ArrowLeft size={16} />
+            <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
         </Button>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <Badge variant="secondary" className="bg-green-100 text-green-800 mb-6 px-4 py-2">
-            LIMITED AVAILABILITY: Only 3 Slots Remaining This Quarter
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 text-center max-w-5xl">
+          <Badge className="bg-destructive/10 text-destructive border-destructive/20 mb-8 px-6 py-3 text-sm font-semibold">
+            ⚡ LIMITED AVAILABILITY: Only 3 Slots Remaining This Quarter
           </Badge>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight tracking-tight">
             Stop Losing Beneficiaries to Communication Gaps
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
             Custom WhatsApp ChatBot Solutions that help NGOs reach more people, 
             collect real-time data, and deliver critical services — 
-            <span className="font-semibold text-green-600">faster, safer, smarter.</span>
+            <span className="font-semibold text-primary">faster, safer, smarter.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <Button 
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg"
+              size="lg"
+              className="px-10 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
               onClick={handleScheduleCall}
             >
               Schedule Strategy Call
@@ -90,7 +91,8 @@ const ChatbotOffer = () => {
             </Button>
             <Button 
               variant="outline" 
-              className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-6 text-lg rounded-lg"
+              size="lg"
+              className="px-10 py-6 text-lg font-semibold border-2"
               onClick={handleEmailContact}
             >
               Get Project Quote
@@ -101,43 +103,45 @@ const ChatbotOffer = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-16 bg-red-50 border-y border-red-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+      <section className="py-20 bg-destructive/5 border-y border-destructive/10">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16">
             Are These Challenges Limiting Your Impact?
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {painPoints.map((pain, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-lg border border-red-200">
-                <div className="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0" />
-                <p className="text-gray-700 font-medium">{pain}</p>
-              </div>
+              <Card key={index} className="p-8 border-destructive/20 bg-background/80 backdrop-blur-sm">
+                <CardContent className="p-0 flex items-start gap-4">
+                  <div className="w-3 h-3 bg-destructive rounded-full mt-2 flex-shrink-0" />
+                  <p className="text-foreground font-medium text-lg leading-relaxed">{pain}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Solution Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8">
               The Solution Your NGO Needs
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Purpose-built chatbot technology designed specifically for humanitarian organizations working in challenging environments.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-6 border-2 hover:border-green-200 transition-colors">
-                <CardContent className="pt-6">
-                  <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-green-600">
+              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow border-2 hover:border-primary/20">
+                <CardContent className="p-0">
+                  <div className="bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 text-primary">
                     {benefit.icon}
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.desc}</p>
+                  <h3 className="font-bold text-foreground mb-3 text-lg">{benefit.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{benefit.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -146,57 +150,62 @@ const ChatbotOffer = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+      <section className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16">
             Perfect for Organizations Working In:
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-                <Users className="w-8 h-8 text-green-600 mx-auto mb-4" />
-                <p className="font-medium text-gray-900">{useCase}</p>
-              </div>
+              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-0">
+                  <Users className="w-12 h-12 text-primary mx-auto mb-6" />
+                  <p className="font-semibold text-foreground text-lg leading-relaxed">{useCase}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* What's Included */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-20">
             Everything You Need to Succeed
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {included.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 bg-green-50 rounded-lg border border-green-200">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-800 font-medium">{item}</p>
-              </div>
+              <Card key={index} className="p-6 border-primary/20 bg-primary/5">
+                <CardContent className="p-0 flex items-start gap-6">
+                  <CheckCircle className="w-7 h-7 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-foreground font-semibold text-lg leading-relaxed">{item}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6">Investment Options</h2>
-          <p className="text-xl text-gray-300 mb-12">
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Investment Options</h2>
+          <p className="text-xl text-primary-foreground/80 mb-16 leading-relaxed">
             Transparent pricing designed for NGO budgets
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <Card className="bg-white text-gray-900 border-2">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Standard Package</h3>
-                <div className="text-4xl font-bold text-green-600 mb-4">From £5,000</div>
-                <p className="text-gray-600 mb-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="p-8 text-center border-2">
+              <CardContent className="p-0">
+                <h3 className="text-2xl font-bold mb-6 text-foreground">Standard Package</h3>
+                <div className="text-5xl font-bold text-primary mb-6">From £5,000</div>
+                <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
                   Complete chatbot solution with core features and support
                 </p>
                 <Button 
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3"
+                  size="lg"
+                  className="w-full py-4 text-lg font-semibold"
                   onClick={handleScheduleCall}
                 >
                   Get Started
@@ -204,19 +213,21 @@ const ChatbotOffer = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-600 text-white border-2 border-green-500 relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900">
+            <Card className="p-8 text-center border-2 border-primary bg-primary text-primary-foreground relative overflow-hidden">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground px-4 py-2">
+                <Star className="w-4 h-4 mr-1" />
                 Most Popular
               </Badge>
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Advanced Package</h3>
-                <div className="text-4xl font-bold mb-4">£8,000 - £10,000+</div>
-                <p className="text-green-100 mb-6">
+              <CardContent className="p-0">
+                <h3 className="text-2xl font-bold mb-6">Advanced Package</h3>
+                <div className="text-5xl font-bold mb-6">£8,000 - £10,000+</div>
+                <p className="text-primary-foreground/80 mb-8 text-lg leading-relaxed">
                   Multi-language, custom dashboards, complex workflows
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full border-2 border-white text-white hover:bg-white hover:text-green-600 py-3"
+                  size="lg"
+                  className="w-full py-4 text-lg font-semibold border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                   onClick={handleScheduleCall}
                 >
                   Discuss Requirements
@@ -225,59 +236,62 @@ const ChatbotOffer = () => {
             </Card>
           </div>
 
-          <div className="mt-8">
-            <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 px-4 py-2">
-              Special pilot pricing available for local NGOs and first-time partners
+          <div className="mt-12">
+            <Badge variant="secondary" className="px-6 py-3 text-sm font-semibold">
+              💡 Special pilot pricing available for local NGOs and first-time partners
             </Badge>
           </div>
         </div>
       </section>
 
       {/* Social Proof / Urgency */}
-      <section className="py-16 bg-blue-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+      <section className="py-20 bg-secondary/50">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-16">
             Join Forward-Thinking NGOs Already Using ChatBot Solutions
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">5 weeks</div>
-              <p className="text-gray-700">Average deployment time</p>
+              <div className="text-6xl font-bold text-primary mb-4">5 weeks</div>
+              <p className="text-muted-foreground text-lg">Average deployment time</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">10x</div>
-              <p className="text-gray-700">Faster data collection</p>
+              <div className="text-6xl font-bold text-primary mb-4 flex items-center justify-center">
+                10<TrendingUp className="w-8 h-8 ml-2" />
+              </div>
+              <p className="text-muted-foreground text-lg">Faster data collection</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <p className="text-gray-700">Automated beneficiary support</p>
+              <div className="text-6xl font-bold text-primary mb-4">24/7</div>
+              <p className="text-muted-foreground text-lg">Automated beneficiary support</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-green-600 to-blue-600 text-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-20 lg:py-32 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             Ready to Transform Your Outreach?
           </h2>
-          <p className="text-xl mb-8 text-green-100">
+          <p className="text-2xl mb-12 text-primary-foreground/90 leading-relaxed">
             Limited slots available this quarter. Book your strategy call today.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center mb-8">
             <Button 
               size="lg"
-              className="bg-white text-green-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold rounded-lg"
+              variant="secondary"
+              className="px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-shadow"
               onClick={handleScheduleCall}
             >
               Schedule Strategy Call Now
-              <Zap className="w-5 h-5 ml-2" />
+              <Zap className="w-6 h-6 ml-3" />
             </Button>
           </div>
 
-          <p className="mt-6 text-green-100 text-sm">
+          <p className="text-primary-foreground/80 text-lg">
             No commitment required • 30-minute consultation • Get custom recommendations
           </p>
         </div>
