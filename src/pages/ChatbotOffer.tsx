@@ -332,12 +332,12 @@ const ChatbotOffer = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
+      <section className="py-20 lg:py-32 bg-sidebar-primary text-sidebar-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             Ready to Transform Your Outreach?
           </h2>
-          <p className="text-2xl mb-12 text-primary-foreground/90 leading-relaxed">
+          <p className="text-2xl mb-12 text-sidebar-primary-foreground/90 leading-relaxed">
             Limited slots available this quarter. Book your strategy call today.
           </p>
           
@@ -353,7 +353,7 @@ const ChatbotOffer = () => {
             </Button>
           </div>
 
-          <p className="text-primary-foreground/80 text-lg">
+          <p className="text-sidebar-primary-foreground/80 text-lg">
             No commitment required • 30-minute consultation • Get custom recommendations
           </p>
         </div>
