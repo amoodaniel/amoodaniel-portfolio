@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
@@ -11,6 +11,17 @@ import ProjectNews from '@/components/ProjectNews';
 import ProjectProblemSolution from '@/components/ProjectProblemSolution';
 
 const Anenasawa = () => {
+  // Add noindex meta tag to prevent search engine indexing
+  useEffect(() => {
+    const metaRobots = document.createElement('meta');
+    metaRobots.name = 'robots';
+    metaRobots.content = 'noindex, nofollow';
+    document.head.appendChild(metaRobots);
+    
+    return () => {
+      document.head.removeChild(metaRobots);
+    };
+  }, []);
   const projectData = {
     title: "GBV Intervention Chatbot",
     description: "A WhatsApp-based chatbot designed to streamline gender-based violence (GBV) reporting by enabling outreach workers to record disclosures quickly, efficiently, and securely.",
