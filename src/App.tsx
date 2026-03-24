@@ -12,6 +12,7 @@ import MajiMonitor from "./pages/MajiMonitor";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import ChatbotOffer from "./pages/ChatbotOffer";
+import Blog from "./pages/Blog";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/chatbot-offer" element={<ChatbotOffer />} />
+            <Route path="/blog" element={<Blog />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

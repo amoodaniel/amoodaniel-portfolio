@@ -21,6 +21,7 @@ const Navbar = () => {
   const navLinks = [
     { title: 'Recent Work', href: '/#humanitarian-tech' },
     { title: 'Services', href: '/#services' },
+    { title: 'Blog', href: '/blog' },
     { title: 'About', href: '/about' },
     { title: 'Contact', href: '#contact' },
   ];
