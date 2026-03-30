@@ -1,78 +1,103 @@
 import React, { useState } from 'react';
-import { ExternalLink, BookOpen, ArrowLeft } from 'lucide-react';
+import { ExternalLink, BookOpen, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useBlogPosts, type BlogPost } from '@/hooks/useBlogPosts';
+import { usePublicBlog } from '@/hooks/usePublicBlog';
+import type { BlogPost } from '@/hooks/useBlogPosts';
+import type { TopicCategory } from '@/sanity/client';
 
-type FilterSource = 'all' | 'substack' | 'medium';
+type FilterCategory = 'all' | TopicCategory;
 
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return '';
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-const SourceBadge = ({ source }: { source: 'substack' | 'medium' }) => {
-  if (source === 'substack') {
-    return (
-      <span className="inline-flex items-center text-xs font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-orange-50 text-orange-600 border border-orange-100">
-        Substack
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center text-xs font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
-      Medium
-    </span>
-  );
+const CATEGORY_STYLES: Record<TopicCategory, string> = {
+  technology: 'bg-blue-50 text-blue-700 border-blue-100',
+  ai: 'bg-purple-50 text-purple-700 border-purple-100',
+  living: 'bg-green-50 text-green-700 border-green-100',
 };
 
-const BlogPostCard = ({ post }: { post: BlogPost }) => (
-  <a
-    href={post.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-200 transition-all duration-250 hover:-translate-y-1"
+const CATEGORY_LABELS: Record<TopicCategory, string> = {
+  technology: 'Technology',
+  ai: 'AI',
+  living: 'Living',
+};
+
+const CategoryBadge = ({ category }: { category: TopicCategory }) => (
+  <span
+    className={`inline-flex items-center text-xs font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full border ${CATEGORY_STYLES[category]}`}
   >
-    <div className="relative h-52 bg-gray-50 overflow-hidden flex-shrink-0">
-      {post.thumbnail ? (
-        <img
-          src={post.thumbnail}
-          alt={post.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = 'none';
-          }}
-        />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center">
-          <BookOpen className="w-10 h-10 text-gray-200" />
-        </div>
-      )}
-    </div>
-
-    <div className="p-6 flex flex-col flex-1">
-      <div className="flex items-center justify-between mb-3">
-        <SourceBadge source={post.source} />
-        <time className="text-xs text-gray-400 tabular-nums">{formatDate(post.pubDate)}</time>
-      </div>
-
-      <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug group-hover:text-gray-600 transition-colors line-clamp-2">
-        {post.title}
-      </h3>
-
-      <p className="text-sm text-gray-500 leading-relaxed flex-1 line-clamp-3">
-        {post.description}
-      </p>
-
-      <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-gray-800 group-hover:gap-2 transition-all duration-200">
-        Read article
-        <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-      </div>
-    </div>
-  </a>
+    {CATEGORY_LABELS[category]}
+  </span>
 );
+
+const BlogPostCard = ({ post }: { post: BlogPost }) => {
+  const inner = (
+    <div className="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-200 transition-all duration-200 hover:-translate-y-1 h-full">
+      <div className="relative h-52 bg-gray-50 overflow-hidden flex-shrink-0">
+        {post.thumbnail ? (
+          <img
+            src={post.thumbnail}
+            alt={post.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <BookOpen className="w-10 h-10 text-gray-200" />
+          </div>
+        )}
+      </div>
+
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center justify-between mb-3">
+          {post.category ? (
+            <CategoryBadge category={post.category} />
+          ) : (
+            <span className="inline-flex items-center text-xs font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
+              {post.source === 'substack' ? 'Substack' : post.source === 'medium' ? 'Medium' : 'Article'}
+            </span>
+          )}
+          <time className="text-xs text-gray-400 tabular-nums">{formatDate(post.pubDate)}</time>
+        </div>
+
+        <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug group-hover:text-gray-600 transition-colors line-clamp-2">
+          {post.title}
+        </h3>
+
+        <p className="text-sm text-gray-500 leading-relaxed flex-1 line-clamp-3">
+          {post.description}
+        </p>
+
+        <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-gray-800 group-hover:gap-2 transition-all duration-200">
+          {post.isNative ? (
+            <>Read post <ArrowRight className="w-3.5 h-3.5 opacity-70" /></>
+          ) : (
+            <>Read article <ExternalLink className="w-3.5 h-3.5 opacity-70" /></>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  if (post.isNative && post.slug) {
+    return (
+      <Link to={`/blog/${post.slug}`} className="block h-full">
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={post.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+      {inner}
+    </a>
+  );
+};
 
 const SkeletonCard = () => (
   <div className="flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden animate-pulse">
@@ -112,17 +137,16 @@ const FilterButton = ({
 );
 
 const Blog = () => {
-  const [filter, setFilter] = useState<FilterSource>('all');
-  const { data: posts, isLoading, isError } = useBlogPosts();
+  const [filter, setFilter] = useState<FilterCategory>('all');
+  const { data: posts, isLoading, isError } = usePublicBlog();
 
   const filtered = posts
     ? filter === 'all'
       ? posts
-      : posts.filter((p) => p.source === filter)
+      : posts.filter((p) => p.category === filter)
     : [];
 
-  const substackCount = posts?.filter((p) => p.source === 'substack').length ?? 0;
-  const mediumCount = posts?.filter((p) => p.source === 'medium').length ?? 0;
+  const countFor = (cat: TopicCategory) => posts?.filter((p) => p.category === cat).length ?? 0;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -136,8 +160,7 @@ const Blog = () => {
               to="/"
               className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 mb-8 transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to home
+              <ArrowLeft className="w-4 h-4" /> Back to home
             </Link>
 
             <div className="mb-3">
@@ -151,11 +174,10 @@ const Blog = () => {
             </h1>
 
             <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
-              Thoughts on technology, humanitarian innovation, and building products that matter —
-              pulled live from Substack and Medium.
+              Thoughts on technology, humanitarian innovation, and building products that matter.
             </p>
 
-            {/* Source links */}
+            {/* Platform links */}
             <div className="flex items-center gap-4 mt-8 flex-wrap">
               <a
                 href="https://amoodaniel.substack.com"
@@ -178,42 +200,38 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* Filter tabs + grid */}
+      {/* Filters + grid */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
-          {/* Filter row */}
           {!isError && (
             <div className="flex items-center gap-2 mb-10 flex-wrap">
               <FilterButton active={filter === 'all'} onClick={() => setFilter('all')}>
                 All {posts ? `(${posts.length})` : ''}
               </FilterButton>
-              <FilterButton active={filter === 'substack'} onClick={() => setFilter('substack')}>
-                Substack {substackCount > 0 ? `(${substackCount})` : ''}
+              <FilterButton active={filter === 'technology'} onClick={() => setFilter('technology')}>
+                Technology {countFor('technology') > 0 ? `(${countFor('technology')})` : ''}
               </FilterButton>
-              <FilterButton active={filter === 'medium'} onClick={() => setFilter('medium')}>
-                Medium {mediumCount > 0 ? `(${mediumCount})` : ''}
+              <FilterButton active={filter === 'ai'} onClick={() => setFilter('ai')}>
+                AI {countFor('ai') > 0 ? `(${countFor('ai')})` : ''}
+              </FilterButton>
+              <FilterButton active={filter === 'living'} onClick={() => setFilter('living')}>
+                Living {countFor('living') > 0 ? `(${countFor('living')})` : ''}
               </FilterButton>
             </div>
           )}
 
-          {/* Loading skeletons */}
           {isLoading && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array.from({ length: 9 }).map((_, i) => (
-                <SkeletonCard key={i} />
-              ))}
+              {Array.from({ length: 9 }).map((_, i) => <SkeletonCard key={i} />)}
             </div>
           )}
 
-          {/* Error state */}
           {isError && !isLoading && (
             <div className="text-center py-20">
               <BookOpen className="w-14 h-14 text-gray-200 mx-auto mb-5" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Couldn't load posts
-              </h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Couldn't load posts</h3>
               <p className="text-gray-500 mb-8 max-w-sm mx-auto">
-                There was a problem fetching the feeds. You can read directly on the platforms:
+                There was a problem fetching the feeds. Read directly on the platforms:
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <a
@@ -236,7 +254,6 @@ const Blog = () => {
             </div>
           )}
 
-          {/* Posts grid */}
           {!isLoading && !isError && filtered.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((post, i) => (
@@ -245,10 +262,9 @@ const Blog = () => {
             </div>
           )}
 
-          {/* Empty state after filtering */}
           {!isLoading && !isError && filtered.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">No posts found.</p>
+              <p className="text-gray-400 text-lg">No posts in this category yet.</p>
             </div>
           )}
         </div>

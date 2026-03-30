@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import type { TopicCategory } from '@/sanity/client';
 
 export interface BlogPost {
   title: string;
@@ -6,9 +7,14 @@ export interface BlogPost {
   link: string;
   thumbnail: string;
   description: string;
-  source: 'substack' | 'medium';
+  source: 'substack' | 'medium' | 'native';
   categories: string[];
   author: string;
+  /** Resolved topic category (set by curation or native post field) */
+  category: TopicCategory | null;
+  /** Only present for native (Sanity) posts */
+  slug?: string;
+  isNative?: boolean;
 }
 
 const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
@@ -55,6 +61,8 @@ async function fetchFeed(feedUrl: string, source: 'substack' | 'medium'): Promis
     source,
     categories: Array.isArray(item.categories) ? (item.categories as string[]) : [],
     author: typeof item.author === 'string' ? item.author : '',
+    category: null,
+    isNative: false,
   }));
 }
 
