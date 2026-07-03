@@ -1,129 +1,119 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Link, NavLink } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { site } from '@/data/site';
+
+/* Fixed nav, Ink bg with 1px Line bottom border on scroll.
+   Active page = Paper + underline; inactive = Muted, hover Paper.
+   Mobile: wordmark + hamburger → full-screen overlay, same states. */
+
+const navLinks = [
+  { title: 'Work', href: '/work' },
+  { title: 'Blog', href: '/blog' },
+  { title: 'About', href: '/about' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { title: 'Recent Work', href: '/#humanitarian-tech' },
-    { title: 'Services', href: '/#services' },
-    { title: 'Blog', href: '/blog' },
-    { title: 'About', href: '/about' },
-    { title: 'Contact', href: '#contact' },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const linkClasses = ({ isActive }: { isActive: boolean }) =>
+    cn(
+      'text-base transition-colors duration-200',
+      isActive
+        ? 'text-paper underline underline-offset-8 decoration-1'
+        : 'text-muted-foreground hover:text-paper'
+    );
 
   return (
-    <header 
+    <header
       className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        'fixed top-0 left-0 w-full z-50 bg-ink border-b transition-colors duration-200',
+        isScrolled ? 'border-line' : 'border-transparent'
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          <div className="flex-shrink-0 font-bold text-2xl md:text-3xl text-gray-900">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                AD
-              </div>
-              <span className="hidden sm:inline">AMOO.DEV</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              link.href.startsWith('/#') ? (
-                <HashLink
-                  key={link.title}
-                  to={link.href}
-                  smooth
-                  className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
-                >
-                  {link.title}
-                </HashLink>
-              ) : link.href.startsWith('/') ? (
-                <Link
-                  key={link.title}
-                  to={link.href}
-                  className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
-                >
-                  {link.title}
-                </Link>
-              ) : (
-              <a
-                key={link.title}
-                href={link.href}
-                className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
-              >
-                {link.title}
-              </a>
-              )
-            ))}
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-gray-900 focus:outline-none"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
+      <div className="container flex items-center justify-between h-16 md:h-[72px]">
+        <Link
+          to="/"
+          className="font-display font-bold tracking-[-0.02em] text-lg text-paper"
+          onClick={() => setIsOpen(false)}
+        >
+          {site.wordmark}
+        </Link>
+
+        {/* Desktop */}
+        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+          {navLinks.map((link) => (
+            <NavLink key={link.title} to={link.href} className={linkClasses}>
+              {link.title}
+            </NavLink>
+          ))}
+          <a
+            href={site.bookCallUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary !px-4 !py-2 text-sm"
+          >
+            Book a call
+          </a>
+        </nav>
+
+        {/* Mobile trigger */}
+        <button
+          type="button"
+          className="md:hidden text-paper p-2 -mr-2"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-      
-      {/* Mobile Menu */}
+
+      {/* Mobile full-screen overlay */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="container mx-auto px-4 py-4 space-y-3">
+        <div className="md:hidden fixed inset-0 top-16 bg-ink z-40 flex flex-col">
+          <nav className="container flex flex-col gap-2 pt-8" aria-label="Primary mobile">
             {navLinks.map((link) => (
-              link.href.startsWith('/#') ? (
-                <HashLink
-                  key={link.title}
-                  to={link.href}
-                  smooth
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-gray-900 font-medium py-2"
-                >
-                  {link.title}
-                </HashLink>
-              ) : link.href.startsWith('/') ? (
-                <Link
-                  key={link.title}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-gray-900 font-medium py-2"
-                >
-                  {link.title}
-                </Link>
-              ) : (
-              <a
+              <NavLink
                 key={link.title}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+                className={({ isActive }) =>
+                  cn(
+                    'type-h2 py-3 transition-colors duration-200',
+                    isActive ? 'text-paper underline underline-offset-8' : 'text-muted-foreground'
+                  )
+                }
               >
                 {link.title}
-              </a>
-              )
+              </NavLink>
             ))}
-          </div>
+            <a
+              href={site.bookCallUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-6 w-full"
+              onClick={() => setIsOpen(false)}
+            >
+              Book a call
+            </a>
+          </nav>
         </div>
       )}
     </header>

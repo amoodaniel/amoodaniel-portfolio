@@ -269,28 +269,28 @@ const ChatbotOffer = () => {
             </Card>
 
             {/* Advanced Package */}
-            <Card className="p-8 text-left bg-card border-2 border-accent/40 shadow-md hover:shadow-lg transition-shadow">
+            <Card className="p-8 text-left bg-card border-2 border-signal/40 shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-0">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <Badge className="bg-accent text-accent-foreground mb-3">Most popular</Badge>
+                    <Badge className="bg-signal text-ink mb-3">Most popular</Badge>
                     <h3 className="text-2xl font-bold">Advanced</h3>
                   </div>
-                  <Star className="w-6 h-6 text-accent" />
+                  <Star className="w-6 h-6 text-signal" />
                 </div>
                 <div className="mb-6">
                   <div className="text-5xl font-bold text-foreground">£8,000</div>
                   <p className="text-muted-foreground text-sm">Typical value £15,000+</p>
                 </div>
                 <div className="space-y-3 mb-8">
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Everything in Standard</span></div>
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Multi-language support</span></div>
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Custom M&E dashboard</span></div>
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Workflow automation</span></div>
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Priority support & updates</span></div>
-                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-accent" /><span>Advanced analytics & reporting</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Everything in Standard</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Multi-language support</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Custom M&E dashboard</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Workflow automation</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Priority support & updates</span></div>
+                  <div className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-signal" /><span>Advanced analytics & reporting</span></div>
                 </div>
-                <Button variant="secondary" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={handleScheduleCall}>
+                <Button variant="secondary" size="lg" className="w-full bg-signal text-ink hover:bg-signal-hover" onClick={handleScheduleCall}>
                   Talk to an Expert
                 </Button>
                 <p className="text-xs text-muted-foreground mt-3">Enterprise-grade in ~6 weeks</p>
@@ -332,12 +332,12 @@ const ChatbotOffer = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-32 bg-sidebar-primary text-sidebar-primary-foreground">
+      <section className="py-20 lg:py-32 bg-surface text-paper">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             Ready to Transform Your Outreach?
           </h2>
-          <p className="text-2xl mb-12 text-sidebar-primary-foreground/90 leading-relaxed">
+          <p className="text-2xl mb-12 text-paper/90 leading-relaxed">
             Limited slots available this quarter. Book your strategy call today.
           </p>
           
@@ -353,7 +353,7 @@ const ChatbotOffer = () => {
             </Button>
           </div>
 
-          <p className="text-sidebar-primary-foreground/80 text-lg">
+          <p className="text-paper/80 text-lg">
             No commitment required • 30-minute consultation • Get custom recommendations
           </p>
         </div>

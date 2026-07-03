@@ -1,27 +1,64 @@
-
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Reveal from '@/components/Reveal';
+import { site, socials } from '@/data/site';
+
+/* The footer IS the contact section — on every page, per the brief. */
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-8 border-t border-gray-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex items-center">
-            <Heart className="h-5 w-5 mr-2 text-gray-600" />
-            <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Amoo Daniel. All rights reserved.
-            </p>
-          </div>
-          
-          <div className="flex items-center gap-6">
-            <a href="/privacy" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Privacy Policy
+    <footer className="border-t border-line">
+      <div className="container section">
+        <Reveal>
+          <p className="type-meta text-signal">
+            Available for consulting · Advisory · Speaking
+          </p>
+        </Reveal>
+        <Reveal delay={150}>
+          <h2 className="type-h1 mt-6">
+            Building something
+            <br /> for the frontline?
+          </h2>
+        </Reveal>
+        <Reveal delay={300}>
+          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <a
+              href={site.bookCallUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Book a 30-min call
             </a>
-            <a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Terms of Service
+            <a href={`mailto:${site.email}`} className="link-signal font-mono text-sm text-center sm:text-left">
+              {site.email}
             </a>
           </div>
+        </Reveal>
+
+        <div className="mt-16 md:mt-24 pt-8 border-t border-line flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="font-mono text-[13px] text-muted-foreground">
+            © {new Date().getFullYear()} Daniel Amoo
+          </p>
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2" aria-label="Social links">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[13px] text-muted-foreground hover:text-paper transition-colors duration-200"
+              >
+                {s.label}
+              </a>
+            ))}
+            <Link
+              to="/privacy"
+              className="font-mono text-[13px] text-muted-foreground hover:text-paper transition-colors duration-200"
+            >
+              Privacy
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

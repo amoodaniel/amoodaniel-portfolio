@@ -1,178 +1,185 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ContactSection from '@/components/ContactSection';
-import { Badge } from '@/components/ui/badge';
+import Reveal from '@/components/Reveal';
+import Seo from '@/components/Seo';
+import { site } from '@/data/site';
+import { aboutIntro, timeline, startups, credentials } from '@/data/about';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-ink">
+      <Seo
+        title="About — Daniel Amoo"
+        description="I build digital systems for humanitarian organizations — the kind that have to work on a shared phone, over a failing network, in the hands of someone with a hundred more urgent things to do."
+        path="/about"
+      />
       <Navbar />
-      <main className="flex-1 py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">About Me</h1>
-        <p className="text-xl text-gray-700 mb-8">
-          Hello, My name is <span className="font-semibold">Daniel Ayomide AMOO</span>, and I build digital products for impact.
-        </p>
-        <p className="text-lg text-gray-600 mb-12">
-          Most of my experience has been in analyzing data and building innovative systems (web, mobile, chatbots) for&nbsp;
-          <a href="https://secondtree.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">small organizations</a>,&nbsp;
-          <a href="https://www.israaid.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">iNGOs</a>&nbsp;and&nbsp;
-          <a href="https://www.unhcr.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">International Organizations</a>.
-        </p>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Experience</h2>
-          <div className="space-y-8">
+      <main id="main" className="pt-16 md:pt-[72px]">
+        {/* Intro */}
+        <section className="section" aria-labelledby="about-heading">
+          <div className="container grid md:grid-cols-[1fr_360px] gap-12 md:gap-16 items-start">
             <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg"><a href="https://www.israaid.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">IsraAID</a></span>
-                <span className="text-gray-500 text-sm">Feb 2024 – Present</span>
+              <Reveal>
+                <h1 id="about-heading" className="type-display max-w-2xl">
+                  {aboutIntro.headline}
+                </h1>
+              </Reveal>
+              <div className="mt-8 space-y-6 max-w-xl">
+                {aboutIntro.paragraphs.map((paragraph, i) => (
+                  <Reveal key={i} delay={150 + i * 150}>
+                    <p className={i === 0 ? 'type-body-lg text-paper/90' : 'text-muted-foreground'}>
+                      {paragraph}
+                    </p>
+                  </Reveal>
+                ))}
               </div>
-              <div className="text-gray-500 text-xs mb-1">Digital Information Officer</div>
-              <p className="text-gray-700 mb-1 text-justify">
-              I support humanitarian teams by developing digital tools that improve the speed and efficiency of field operations. One of the key projects I lead is the development of a WhatsApp bot for GBV outreach in South Sudan, created to streamline case reporting.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">Streamlit</Badge>
-                <Badge variant="secondary">Airtable API</Badge>
-                <Badge variant="secondary">Turn.io</Badge>
-                <Badge variant="secondary">Twilio</Badge>
-                <Badge variant="secondary">Monday.com API</Badge>
-                <Badge variant="secondary">Ruby</Badge>
+              <Reveal delay={600}>
+                <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+                  <a href={aboutIntro.cvUrl} className="btn-secondary" download>
+                    Download CV
+                  </a>
+                  <a
+                    href={site.bookCallUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-signal text-center sm:text-left"
+                  >
+                    Book a call →
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+            <Reveal delay={300} className="order-first md:order-none">
+              <img
+                src={aboutIntro.portrait}
+                alt="Daniel Amoo"
+                className="w-40 md:w-full max-w-[360px] rounded-lg border border-line object-cover grayscale aspect-[4/5]"
+              />
+            </Reveal>
+          </div>
+        </section>
 
-
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg"><a href="https://www.unhcr.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">UNHCR – Geneva, Switzerland</a></span>
-                <span className="text-gray-500 text-sm">Oct 2023 – Apr 2024</span>
-              </div>
-              <div className="text-gray-500 text-xs mb-1">Communications Intern</div>
-              <p className="text-gray-700 mb-1 text-justify">
-              I managed and updated website content for the <a href="https://globalprotectioncluster.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Global Protection Cluster</a>, including fixing their Drupal page which was deprecating. I published field updates from country offices and created donor-focused summaries and visual assets. I also redesigned communication templates and supported the rollout of a consistent brand identity across all tools. Working closely with the External Engagement team, I transformed lengthy reports into engaging content for the website and social media platforms.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">Drupal</Badge>
-                <Badge variant="secondary">AWS</Badge>
-                <Badge variant="secondary">PHP</Badge>
-                <Badge variant="secondary">Excel</Badge>
-                <Badge variant="secondary">Canva</Badge>
-                <Badge variant="secondary">InDesign</Badge>
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg"><a href="https://nugitech.com/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Nugi Technologies – Calabar, Nigeria</a></span>
-                <span className="text-gray-500 text-sm">Jul 2022 – Jul 2023</span>
-              </div>
-              <div className="text-gray-500 text-xs mb-1">Software Engineer</div>
-              <p className="text-gray-700 mb-1 text-justify">
-                I Developed backend systems for Fuel Plug (FKA Wia Fuel Dey), a mobile/web platform that helps drivers find fuel stations with available supply. Led key updates to auth and payment microservices, added new user types with instant wallet access, built inter-service APIs, and created endpoints for attendants, vouchers, and beneficiaries. Documented all APIs using Swagger and Postman.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">Node.js</Badge>
-                <Badge variant="secondary">MongoDB</Badge>
-                <Badge variant="secondary">Express</Badge>
-                <Badge variant="secondary">TypeScript</Badge>
-                <Badge variant="secondary">MongoDB</Badge>
-                <Badge variant="secondary">PostgreSQL</Badge>
-                <Badge variant="secondary">EJS</Badge>
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg"><a href="https://www.covenantuniversity.edu.ng/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Covenant University</a></span>
-                <span className="text-gray-500 text-sm">Oct 2020 – Oct 2021</span>
-              </div>
-              <div className="text-gray-500 text-xs mb-1">Software Researcher</div>
-              <p className="text-gray-700 mb-1 text-justify">
-              I built a recommender system prototype that tackled the cold-start problem by combining collaborative filtering with Twitter data, achieving a 75% user satisfaction rate in tests.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">Django</Badge>
-                <Badge variant="secondary">PostgreSQL</Badge>
-                <Badge variant="secondary">NetworkX</Badge>
-                <Badge variant="secondary">Twitter API</Badge>
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg"><a href="https://www.covenantuniversity.edu.ng/about-us/operations/centre-for-systems-and-information-services-csis" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">CSIS – Covenant University</a></span>
-                <span className="text-gray-500 text-sm">Jun 2020 – Oct 2020</span>
-              </div>
-              <div className="text-gray-500 text-xs mb-1">Web Developer & IT Support</div>
-              <p className="text-gray-700 mb-1 text-justify">
-                As part of the IT support team, I maintained university websites, resolved staff tech issues, and worked on boosting site visibility through SEO. I also helped launch two internal portals that improved admin processes.
-              </p>
-              <p className="text-gray-700 mb-1 text-justify">
-                Also I built <a href="https://rceogun.covenantuniversity.edu.ng/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Rce Ogun</a> and <a href="https://smartcu.covenantuniversity.edu.ng/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">SmartCU</a> website for Covenant Univeristy.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">WordPress</Badge>
-                <Badge variant="secondary">HTML</Badge>
-                <Badge variant="secondary">CSS</Badge>
-                <Badge variant="secondary">JavaScript</Badge>
-                <Badge variant="secondary">Google Analytics</Badge>
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-                <span className="font-semibold text-lg">Freelance</span>
-                <span className="text-gray-500 text-sm">Sept 2018 – Jun 2020</span>
-              </div>
-              <p className="text-gray-700 mb-1 text-justify">
-                I helped small businesses and content creators go digital—building websites, setting up online payments, and growing their social presence.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="text-sm font-medium text-gray-700 mr-2">Tech:</span>
-                <Badge variant="secondary">WordPress</Badge>
-                <Badge variant="secondary">HTML</Badge>
-                <Badge variant="secondary">CSS</Badge>
-                <Badge variant="secondary">JavaScript</Badge>
-                <Badge variant="secondary">Paystack API</Badge>
-                <Badge variant="secondary">Instagram</Badge>
-                <Badge variant="secondary">Google Analytics</Badge>
-              </div>
+        {/* Where I've worked */}
+        <section className="section border-t border-line" aria-labelledby="worked-heading">
+          <div className="container">
+            <Reveal>
+              <h2 id="worked-heading" className="type-h1">
+                Where I've worked
+              </h2>
+            </Reveal>
+            <div className="mt-10 border-b border-line">
+              {timeline.map((entry, i) => (
+                <Reveal key={entry.years} delay={Math.min(i, 3) * 100}>
+                  <div className="grid md:grid-cols-[160px_280px_1fr] gap-3 md:gap-8 border-t border-line py-8">
+                    <p className="type-meta text-muted-foreground">{entry.years}</p>
+                    <div>
+                      <h3 className="type-h3 text-paper">
+                        {entry.orgUrl ? (
+                          <a
+                            href={entry.orgUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-signal transition-colors duration-200"
+                          >
+                            {entry.org}
+                          </a>
+                        ) : (
+                          entry.org
+                        )}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{entry.role}</p>
+                    </div>
+                    <div>
+                      <p className="text-paper/90">{entry.description}</p>
+                      <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+                        {entry.tags.map((tag) => (
+                          <li key={tag} className="tag">
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">My work for startups and small organizations</h2>
-          <div className="space-y-6">
+        {/* Startups + credentials */}
+        <section className="section border-t border-line" aria-label="Startups and credentials">
+          <div className="container grid md:grid-cols-2 gap-14 md:gap-20">
             <div>
-              <a href="https://web.archive.org/web/20220808161022/https://techstarthq.com/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Techstart HQ</a> - I developed growth strategies for the Ed-techstartup and led launch campaigns that drove a 37% increase in revenue.
+              <Reveal>
+                <h2 className="type-h2">Startups &amp; small orgs</h2>
+              </Reveal>
+              <div className="mt-8 border-b border-line">
+                {startups.map((startup, i) => (
+                  <Reveal key={startup.name} delay={i * 100}>
+                    <div className="border-t border-line py-6 flex items-start justify-between gap-6">
+                      <div>
+                        <h3 className="font-display font-semibold text-lg text-paper">
+                          <a
+                            href={startup.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-signal transition-colors duration-200"
+                          >
+                            {startup.name}
+                          </a>
+                        </h3>
+                        <p className="mt-2 text-sm text-muted-foreground max-w-sm">
+                          {startup.description}
+                        </p>
+                      </div>
+                      <span className="type-meta text-muted-foreground whitespace-nowrap pt-1">
+                        {startup.result}
+                      </span>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
-            <div>
-              <a href="https://web.archive.org/web/20230411125654/https://symble.live/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Symble Live</a> - Developed growth strategies and played a key role in piloting the app at the 2024 Beer with Us music show, where it gained its first set of users and successfully tested its core features.
             </div>
+
             <div>
-              <a href="https://secondtree.org/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">Second Tree</a>: I identified key data pain points in social media engagement, utilizing analytics to drive informed decision-making and improve strategies for the NGO.
+              <Reveal>
+                <h2 className="type-h2">Credentials &amp; beyond work</h2>
+              </Reveal>
+              <div className="mt-8 border-b border-line">
+                {credentials.map((credential, i) => (
+                  <Reveal key={credential.label} delay={i * 100}>
+                    <div className="border-t border-line py-6">
+                      <h3 className="type-meta text-muted-foreground">{credential.label}</h3>
+                      <p className="mt-3 text-paper/90">
+                        {credential.body}
+                        {credential.url && (
+                          <>
+                            {' '}
+                            <a
+                              href={credential.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="link-signal text-sm whitespace-nowrap"
+                            >
+                              {credential.urlLabel}
+                            </a>
+                          </>
+                        )}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Volunteering</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-700">
-            <li><span className="font-semibold"> <a href="https://edutorial.ng/bells-secondary-school-wins-maiden-icons-football-competition/" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-dotted">ICONS CUP</a>:</span> partnered with 10 schools to support this initiative.&nbsp;
-              <span className="text-gray-600">Our goal was to promote Unity and reduce the divide of classism between public and private schools in Ota, Ogun State, while advocating for quality Education through sports (SDG 4).</span>
-            </li>
-          </ul>
         </section>
       </main>
-      <ContactSection />
+
       <Footer />
     </div>
   );
 };
 
-export default About; 
+export default About;
