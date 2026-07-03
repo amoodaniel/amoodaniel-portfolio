@@ -31,7 +31,7 @@ import israaidLogo from '@/assets/logos/israaid.png.asset.json';
 import secondtreeLogo from '@/assets/logos/secondtree.png.asset.json';
 
 export const orgs: { name: string; domain: string; logo?: string; className?: string }[] = [
-  { name: 'UNHCR', domain: 'unhcr.org', logo: unhcrLogo.url, className: 'h-12' },
+  { name: 'UNHCR', domain: 'unhcr.org', logo: unhcrLogo.url, className: 'h-16' },,
   { name: 'IsraAID', domain: 'israaid.org', logo: israaidLogo.url },
   { name: 'Global Protection Cluster', domain: 'globalprotectioncluster.org', logo: gpcLogo.url },
   { name: 'Second Tree', domain: 'secondtree.org', logo: secondtreeLogo.url },
