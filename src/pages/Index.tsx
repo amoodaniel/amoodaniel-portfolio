@@ -81,10 +81,13 @@ const Index = () => {
                     className="whitespace-nowrap px-10 flex items-center"
                   >
                     <img
-                      src={`https://img.logo.dev/${org.domain}?token=${import.meta.env.VITE_LOVABLE_CONNECTOR_LOGO_DEV_API_KEY}&size=200`}
+                      src={
+                        org.logo ??
+                        `https://img.logo.dev/${org.domain}?token=${import.meta.env.VITE_LOVABLE_CONNECTOR_LOGO_DEV_API_KEY}&size=200`
+                      }
                       alt={`${org.name} logo`}
                       loading="lazy"
-                      className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity grayscale brightness-0 invert"
+                      className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
                     />
 
                   </span>

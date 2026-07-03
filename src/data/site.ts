@@ -22,13 +22,18 @@ export const writingPlatforms = {
   substack: 'https://amoodaniel.substack.com',
 };
 
-/* "BUILT WITH" org strip — logo marquee, rendered black & white via Logo.dev */
-export const orgs: { name: string; domain: string }[] = [
-  { name: 'UNHCR', domain: 'unhcr.org' },
+/* "BUILT WITH" org strip — logo marquee, rendered white on dark strip.
+   `logo` is a local asset pointer URL; `domain` is the Logo.dev fallback. */
+import unhcrLogo from '@/assets/logos/unhcr.png.asset.json';
+import gpcLogo from '@/assets/logos/gpc.png.asset.json';
+import elrhaLogo from '@/assets/logos/elrha.webp.asset.json';
+
+export const orgs: { name: string; domain: string; logo?: string }[] = [
+  { name: 'UNHCR', domain: 'unhcr.org', logo: unhcrLogo.url },
   { name: 'IsraAID', domain: 'israaid.org' },
-  { name: 'Global Protection Cluster', domain: 'globalprotectioncluster.org' },
+  { name: 'Global Protection Cluster', domain: 'globalprotectioncluster.org', logo: gpcLogo.url },
   { name: 'Second Tree', domain: 'secondtree.org' },
-  { name: 'Elrha', domain: 'elrha.org' },
+  { name: 'Elrha', domain: 'elrha.org', logo: elrhaLogo.url },
 ];
 
 export const whatIDo = [
