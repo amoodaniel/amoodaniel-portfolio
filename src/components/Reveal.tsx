@@ -40,10 +40,10 @@ const Reveal = ({ children, delay = 0, className, as: Tag = 'div' }: RevealProps
     <Tag
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ref={ref as any}
-      className={cn(visible ? 'animate-rise' : 'opacity-0', className)}
+      className={cn(visible ? 'animate-rise' : 'opacity-0', className) as string}
       style={delay ? { animationDelay: `${delay}ms` } : undefined}
     >
-      {children}
+      {children as React.ReactNode}
     </Tag>
   );
 };
