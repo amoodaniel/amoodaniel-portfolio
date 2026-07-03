@@ -36,15 +36,14 @@ const Reveal = ({ children, delay = 0, className, as: Tag = 'div' }: RevealProps
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <Tag
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ref={ref as any}
-      className={cn(visible ? 'animate-rise' : 'opacity-0', className)}
-      style={delay ? { animationDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </Tag>
+  return React.createElement(
+    Tag,
+    {
+      ref: ref as React.Ref<HTMLElement>,
+      className: cn(visible ? 'animate-rise' : 'opacity-0', className),
+      style: delay ? { animationDelay: `${delay}ms` } : undefined,
+    },
+    children,
   );
 };
 

@@ -74,18 +74,23 @@ const Index = () => {
               className="overflow-hidden flex-1 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
               aria-hidden="true"
             >
-              <div className="flex w-max animate-marquee">
+              <div className="flex w-max animate-marquee items-center">
                 {[...orgs, ...orgs].map((org, i) => (
                   <span
-                    key={`${org}-${i}`}
-                    className="font-sans font-medium text-paper/80 whitespace-nowrap px-8"
+                    key={`${org.domain}-${i}`}
+                    className="whitespace-nowrap px-10 flex items-center"
                   >
-                    {org}
+                    <img
+                      src={`https://img.logo.dev/${org.domain}?token=${import.meta.env.VITE_LOVABLE_CONNECTOR_LOGO_DEV_API_KEY}&format=png&greyscale=true&size=120&retina=true`}
+                      alt={`${org.name} logo`}
+                      loading="lazy"
+                      className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
+                    />
                   </span>
                 ))}
               </div>
             </div>
-            <span className="sr-only">{orgs.join(', ')}</span>
+            <span className="sr-only">{orgs.map((o) => o.name).join(', ')}</span>
           </div>
         </section>
 
