@@ -87,7 +87,7 @@ const Index = () => {
                       }
                       alt={`${org.name} logo`}
                       loading="lazy"
-                      className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
+                      className={`w-auto object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert h-8 ${org.className ?? ''}`}
                     />
 
                   </span>
