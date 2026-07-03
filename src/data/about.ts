@@ -90,7 +90,7 @@ export const startups = [
   },
 ];
 
-export const credentials = [
+export const credentials: { label: string; body: string; url?: string; urlLabel?: string }[] = [
   {
     label: 'Education',
     /* TODO(daniel): degree, institution, year — from your CV */
@@ -103,6 +103,8 @@ export const credentials = [
   {
     label: 'Volunteering',
     body: 'ICONS CUP — partnered with 10 schools in Ogun State to bridge public/private school divides through sport (SDG 4).',
+    url: 'https://edutorial.ng/bells-secondary-school-wins-maiden-icons-football-competition/',
+    urlLabel: 'Coverage →',
   },
   {
     label: 'Content',

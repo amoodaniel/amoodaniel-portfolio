@@ -152,7 +152,22 @@ const About = () => {
                   <Reveal key={credential.label} delay={i * 100}>
                     <div className="border-t border-line py-6">
                       <h3 className="type-meta text-muted-foreground">{credential.label}</h3>
-                      <p className="mt-3 text-paper/90">{credential.body}</p>
+                      <p className="mt-3 text-paper/90">
+                        {credential.body}
+                        {credential.url && (
+                          <>
+                            {' '}
+                            <a
+                              href={credential.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="link-signal text-sm whitespace-nowrap"
+                            >
+                              {credential.urlLabel}
+                            </a>
+                          </>
+                        )}
+                      </p>
                     </div>
                   </Reveal>
                 ))}

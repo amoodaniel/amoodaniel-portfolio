@@ -15,9 +15,9 @@ const Footer = () => {
           </p>
         </Reveal>
         <Reveal delay={150}>
-          <h2 className="type-display mt-6 max-w-xl">
+          <h2 className="type-h1 mt-6">
             Building something
-            <br className="hidden sm:block" /> for the frontline?
+            <br /> for the frontline?
           </h2>
         </Reveal>
         <Reveal delay={300}>

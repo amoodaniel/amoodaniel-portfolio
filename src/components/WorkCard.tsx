@@ -16,7 +16,7 @@ interface WorkCardProps {
 const WorkCard = ({ to, label, title, description, metric, tags }: WorkCardProps) => (
   <Link
     to={to}
-    className="group flex flex-col rounded-lg border border-line bg-surface p-6 transition-colors duration-[250ms] hover:border-[#3a3a3a] hover:bg-[#1a1a1a] active:border-paper"
+    className="group flex flex-col rounded-lg border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 motion-reduce:hover:translate-y-0 hover:border-[#3a3a3a] hover:bg-[#1a1a1a] active:border-paper"
   >
     <div className="flex items-center justify-between gap-4">
       <span className="type-meta text-muted-foreground">{label}</span>

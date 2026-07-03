@@ -1,15 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.warn("404: attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   return (
     <div className="min-h-screen bg-ink flex flex-col">
       <Navbar />
