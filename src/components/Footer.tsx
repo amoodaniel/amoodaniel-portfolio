@@ -30,8 +30,8 @@ const Footer = () => {
             >
               Book a 30-min call
             </a>
-            <a href={`mailto:${site.email}`} className="link-signal font-mono text-sm text-center sm:text-left">
-              {site.email}
+            <a href={`mailto:${site.email}`} className="btn-primary">
+              Send an Email
             </a>
           </div>
         </Reveal>
