@@ -22,13 +22,13 @@ export const writingPlatforms = {
   substack: 'https://amoodaniel.substack.com',
 };
 
-/* "BUILT WITH" org strip — rendered as a text marquee per the brief */
-export const orgs = [
-  'UNHCR',
-  'IsraAID',
-  'Global Protection Cluster',
-  'Second Tree',
-  'Elrha',
+/* "BUILT WITH" org strip — logo marquee, rendered black & white via Logo.dev */
+export const orgs: { name: string; domain: string }[] = [
+  { name: 'UNHCR', domain: 'unhcr.org' },
+  { name: 'IsraAID', domain: 'israaid.org' },
+  { name: 'Global Protection Cluster', domain: 'globalprotectioncluster.org' },
+  { name: 'Second Tree', domain: 'secondtree.org' },
+  { name: 'Elrha', domain: 'elrha.org' },
 ];
 
 export const whatIDo = [
