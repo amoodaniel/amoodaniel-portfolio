@@ -53,7 +53,18 @@ const Navbar = () => {
           className="font-display font-bold tracking-[-0.02em] text-lg text-paper"
           onClick={() => setIsOpen(false)}
         >
-          {site.wordmark}
+          {(() => {
+            const mark = site.wordmark;
+            const idx = mark.indexOf('.');
+            if (idx === -1) return mark;
+            return (
+              <>
+                {mark.slice(0, idx)}
+                <span className="text-signal">.</span>
+                {mark.slice(idx + 1)}
+              </>
+            );
+          })()}
         </Link>
 
         {/* Desktop */}
