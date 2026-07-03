@@ -1,25 +1,32 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    console.warn("404: attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen bg-ink flex flex-col">
+      <Navbar />
+      <main id="main" className="flex-1 flex items-center pt-16 md:pt-[72px]">
+        <div className="container section">
+          <p className="type-meta text-signal">404</p>
+          <h1 className="type-h1 mt-6">This page doesn't exist.</h1>
+          <p className="mt-6 text-muted-foreground max-w-md">
+            The address may have changed in the redesign — the work, writing, and about pages are
+            all still here.
+          </p>
+          <Link to="/" className="btn-primary mt-10 inline-flex">
+            Back to home
+          </Link>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };
