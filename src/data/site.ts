@@ -28,8 +28,8 @@ import unhcrLogo from '@/assets/logos/unhcr.png.asset.json';
 import gpcLogo from '@/assets/logos/gpc.png.asset.json';
 import elrhaLogo from '@/assets/logos/elrha.webp.asset.json';
 
-export const orgs: { name: string; domain: string; logo?: string }[] = [
-  { name: 'UNHCR', domain: 'unhcr.org', logo: unhcrLogo.url },
+export const orgs: { name: string; domain: string; logo?: string; className?: string }[] = [
+  { name: 'UNHCR', domain: 'unhcr.org', logo: unhcrLogo.url, className: 'h-12' },
   { name: 'IsraAID', domain: 'israaid.org' },
   { name: 'Global Protection Cluster', domain: 'globalprotectioncluster.org', logo: gpcLogo.url },
   { name: 'Second Tree', domain: 'secondtree.org' },
