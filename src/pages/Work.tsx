@@ -11,7 +11,7 @@ const Work = () => {
     <div className="min-h-screen bg-ink">
       <Seo
         title="Work — Daniel Amoo"
-        description="Case studies, not screenshots: the problem, what I built, and what changed. Two humanitarian systems in depth, then selected product work."
+        description="Case studies: the problem, what I built, and what changed. Two humanitarian systems in depth, then selected product work."
         path="/work"
       />
       <Navbar />
@@ -27,9 +27,9 @@ const Work = () => {
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-6 text-muted-foreground type-body-lg">
-                Case studies, not screenshots: the problem, what I built, and what changed.
-                <br className="hidden md:block" /> Two humanitarian systems in depth, then selected
-                product work.
+                Case studies: the problem, what I built, and what changed.
+                <br /> Two humanitarian systems in depth, then selected product
+                work.
               </p>
             </Reveal>
           </div>
