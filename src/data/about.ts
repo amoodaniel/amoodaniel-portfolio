@@ -29,7 +29,7 @@ export const timeline: TimelineEntry[] = [
     orgUrl: 'https://www.israaid.org/',
     role: 'Digital Information Officer',
     description:
-      'Digital tools for field operations. Lead developer of the Anenasawa WhatsApp system for GBV outreach in South Sudan — from field research to deployment and training.',
+      'Digital tools for field operations. Lead developer of the WhatsApp reporting system for GBV outreach in South Sudan — from field research to deployment and training.',
     tags: ['Python', 'Turn.io', 'Streamlit', 'Airtable', 'Twilio'],
   },
   {
@@ -98,7 +98,7 @@ export const credentials: { label: string; body: string; url?: string; urlLabel?
   },
   {
     label: 'In the press',
-    body: 'Anenasawa covered by AP News and profiled by Elrha.',
+    body: 'The WhatsApp reporting system covered by AP News and profiled by Elrha.',
   },
   {
     label: 'Volunteering',

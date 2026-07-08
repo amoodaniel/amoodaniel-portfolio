@@ -68,7 +68,7 @@ export const homeMetrics = [
   {
     value: '7,080',
     countTo: 7080,
-    caption: 'beneficiaries reached through the Anenasawa system in South Sudan',
+    caption: 'beneficiaries reached through the WhatsApp reporting system in South Sudan',
   },
   {
     value: 'AP News',
