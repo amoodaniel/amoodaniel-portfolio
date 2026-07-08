@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'anenasawa',
     number: '01',
     meta: 'ISRAAID · SOUTH SUDAN · 2024–PRESENT',
-    title: 'Anenasawa — WhatsApp case reporting for GBV outreach workers',
+    title: 'WhatsApp reporting system — case reporting for GBV outreach workers',
     tags: ['WhatsApp / Turn.io', 'Python', 'Streamlit', 'Airtable', 'Funded by Elrha'],
     columns: [
       {
@@ -66,7 +66,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'maji-monitor',
     number: '02',
     meta: 'TURKANA WEST, KENYA · IN DEVELOPMENT',
-    title: 'Maji Monitor — community-triggered water infrastructure reporting',
+    title: 'Community water reporting system — community-triggered water infrastructure reporting',
     tags: ['WASH', 'AI voice', 'Field reporting'],
     columns: [
       {
@@ -91,7 +91,7 @@ export const selectedWork = [
   {
     id: 'anenasawa',
     label: '01 — ISRAAID · SOUTH SUDAN',
-    title: 'Anenasawa — WhatsApp case reporting for GBV outreach',
+    title: 'WhatsApp reporting system — case reporting for GBV outreach',
     description:
       'Structured disclosure flows for frontline workers in low-connectivity settings, with a real-time case dashboard for supervisors.',
     metric: { value: '+90%', caption: 'disclosures vs. paper-based reporting' },
@@ -100,7 +100,7 @@ export const selectedWork = [
   {
     id: 'maji-monitor',
     label: '02 — TURKANA WEST, KENYA · IN DEVELOPMENT',
-    title: 'Maji Monitor — reporting water access issues in real time',
+    title: 'Community water reporting system — reporting water access issues in real time',
     description:
       'A community reporting system that moves water-point maintenance from NGO-dependent rounds to citizen-triggered response.',
     metric: { value: '50,000+', caption: 'community members across 20 communities' },
