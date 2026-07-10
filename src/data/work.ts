@@ -95,7 +95,7 @@ export const selectedWork = [
     description:
       'Structured disclosure flows for frontline workers in low-connectivity settings, with a real-time case dashboard for supervisors.',
     metric: { value: '+90%', caption: 'disclosures vs. paper-based reporting' },
-    tags: ['WhatsApp / Turn.io', 'Python', 'Case management'],
+    tags: ['Chatbot', 'Python', 'Case management'],
   },
   {
     id: 'maji-monitor',
