@@ -27,9 +27,8 @@ const Work = () => {
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-6 text-muted-foreground type-body-lg">
-                Case studies: the problem, what I built, and what changed.
-                <br /> Two humanitarian systems in depth, then selected product
-                work.
+                The problem, what I built, and what changed. Two humanitarian
+                systems in depth, plus other outstanding projects below.
               </p>
             </Reveal>
           </div>
