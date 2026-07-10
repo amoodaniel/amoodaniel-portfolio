@@ -31,7 +31,7 @@ export const caseStudies: CaseStudy[] = [
     number: '01',
     meta: 'ISRAAID · SOUTH SUDAN · 2024–PRESENT',
     title: 'WhatsApp reporting system — case reporting for GBV outreach workers',
-    tags: ['WhatsApp / Turn.io', 'Python', 'Streamlit', 'Airtable', 'Funded by Elrha'],
+    tags: ['Chatbot', 'Python', 'Streamlit', 'Airtable', 'Funded by Elrha'],
     columns: [
       {
         label: 'The problem',
@@ -95,7 +95,7 @@ export const selectedWork = [
     description:
       'Structured disclosure flows for frontline workers in low-connectivity settings, with a real-time case dashboard for supervisors.',
     metric: { value: '+90%', caption: 'disclosures vs. paper-based reporting' },
-    tags: ['WhatsApp / Turn.io', 'Python', 'Case management'],
+    tags: ['Chatbot', 'Python', 'Case management'],
   },
   {
     id: 'maji-monitor',
