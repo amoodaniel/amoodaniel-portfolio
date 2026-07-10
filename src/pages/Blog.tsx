@@ -14,9 +14,12 @@ const Blog = () => {
   const [filter, setFilter] = useState('All');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const posts = getAllPosts();
-  const categories = ['All', ...getCategories()];
-  const featured = posts.find((p) => p.featured);
+  const posts = getAllPosts().filter(
+    (p) => !['Personal', 'Career'].includes(p.category)
+  );
+  const categories = ['All', ...getCategories().filter(
+    (c) => !['Personal', 'Career'].includes(c)
+  )];
 
   const filtered = useMemo(
     () => (filter === 'All' ? posts : posts.filter((p) => p.category === filter)),
