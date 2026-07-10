@@ -31,7 +31,7 @@ export const caseStudies: CaseStudy[] = [
     number: '01',
     meta: 'ISRAAID · SOUTH SUDAN · 2024–PRESENT',
     title: 'WhatsApp reporting system — case reporting for GBV outreach workers',
-    tags: ['WhatsApp / Turn.io', 'Python', 'Streamlit', 'Airtable', 'Funded by Elrha'],
+    tags: ['Chatbot', 'Python', 'Streamlit', 'Airtable', 'Funded by Elrha'],
     columns: [
       {
         label: 'The problem',
