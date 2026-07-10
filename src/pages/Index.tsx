@@ -43,9 +43,8 @@ const Index = () => {
             </Reveal>
             <Reveal delay={300}>
               <p className="mt-8 text-muted-foreground type-body-lg max-w-xl">
-                WhatsApp-based case management, AI voice agents, and field dashboards — built with
-                and for INGOs, UN agencies, and the outreach workers who use them where
-                connectivity fails.
+                From chat-based case management systems to AI voice agents, built with and for INGOs,
+                UN agencies, and the field staff who rely on them where connectivity fails.
               </p>
             </Reveal>
             <Reveal delay={450}>
