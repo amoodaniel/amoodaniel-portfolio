@@ -20,6 +20,7 @@ const Blog = () => {
   const categories = ['All', ...getCategories().filter(
     (c) => !['Personal', 'Career'].includes(c)
   )];
+  const featured = posts.find((p) => p.featured);
 
   const filtered = useMemo(
     () => (filter === 'All' ? posts : posts.filter((p) => p.category === filter)),
