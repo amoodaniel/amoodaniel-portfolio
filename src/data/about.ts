@@ -5,8 +5,8 @@ export const aboutIntro = {
   headline: "Technology that holds up where it's hardest to build.",
   paragraphs: [
     "I'm Daniel Amoo. I build digital systems for humanitarian organizations — the kind that have to work on a shared phone, over a failing network, in the hands of someone with a hundred more urgent things to do.",
-    'My path ran from web development and backend engineering in Nigeria, through applied research on recommender systems, to UNHCR in Geneva and now IsraAID — where I lead the development of WhatsApp-based case management for GBV outreach in South Sudan. Along the way I’ve helped startups grow and shipped products of my own.',
-    'The throughline: data systems that respect the people at both ends — the field teams who use them and the communities they serve.',
+    'I build data systems. Most of them end up in the hands of humanitarian organisations. I have a background in computer science and spent my early years in backend and web development. Since then I have been building protection data and AI systems for international NGOs.',
+    'The systems that survive are the ones built for the conditions people actually work in. Patchy connections, real caseloads, high stakes. That is the constraint I design around, and it is the part of the job I enjoy most.',
   ],
   portrait: '/lovable-uploads/headshot 2.png',
   /* TODO(daniel): drop the CV pdf into public/ under this name */
