@@ -72,7 +72,7 @@ export const homeMetrics = [
   },
   {
     value: 'AP News',
-    caption: 'international coverage of the work —',
+    caption: 'international coverage of my work —',
     link: {
       label: 'read the story →',
       url: 'https://apnews.com/article/technology-gender-based-violence-south-sudan-sexual-assault-981be393459e5c0724e1dc1793e4d0e6',
