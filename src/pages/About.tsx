@@ -29,7 +29,7 @@ const About = () => {
               <div className="mt-8 space-y-6 max-w-xl">
                 {aboutIntro.paragraphs.map((paragraph, i) => (
                   <Reveal key={i} delay={150 + i * 150}>
-                    <p className={i === 0 ? 'type-body-lg text-paper/90' : 'text-muted-foreground'}>
+                    <p className={i === 0 ? 'type-body-lg text-paper/90 text-justify' : 'text-muted-foreground text-justify'}>
                       {paragraph}
                     </p>
                   </Reveal>
